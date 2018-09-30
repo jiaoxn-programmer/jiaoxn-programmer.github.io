@@ -99,7 +99,7 @@
 <meta name="description" content="阿焦">
 <meta property="og:type" content="website">
 <meta property="og:title" content="阿焦的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Portal/index.html">
 <meta property="og:site_name" content="阿焦的博客">
 <meta property="og:description" content="阿焦">
 <meta property="og:locale" content="zh-Hans">
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/Portal/"/>
 
 
 
 
 
-  <title>阿焦的博客</title>
+  <title>标签: Portal | 阿焦的博客</title>
   
 
 
@@ -160,8 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,218 +253,53 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
+
+  
+  
+  
+  <div class="post-block tag">
+
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>Portal<small>标签</small>
+        </h1>
+      </div>
+
       
-
-  
-
-  
-  
-  
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Portal迁移（以部署UrbanIOC为例）/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JiaoXN">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿焦的博客">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/Portal迁移（以部署UrbanIOC为例）/" itemprop="url">
+              
+                <span itemprop="name">Portal迁移（以部署UrbanIOC为例）</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Portal迁移（以部署UrbanIOC为例）/" itemprop="url">Portal迁移（以部署UrbanIOC为例）</a></h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T09:57:15+08:00">
-                2018-05-23
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-23T09:57:15+08:00"
+              content="2018-05-23" >
+          05-23
+        </time>
+      </div>
 
-            
+    </header>
+  </article>
 
-            
-          </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ESRI/" itemprop="url" rel="index">
-                    <span itemprop="name">ESRI</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  735
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>背景环境如下：</p>
-<p>1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上；</p>
-<p>2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）；</p>
-<p>3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Portal安装不成功），现需要使用此域名访问UrbanIOC。</p>
-<p>为了解决这种问题，可能大家首先想到的是创建一个计算机全名为esri.tech的虚拟机B，然后安装Portal、Server、WebAdaptor和DataSotre，然后重新部署UrbanIOC。这种方法肯定可以解决这中问题，但是非常耗时间，包括重装软件的时间、项目数据发布的时间（该项目需要发布一个较大的三维场景，数据发布时间挺长的）。在这里给介绍一种新的解决方法：<strong>在虚拟机B上只安装WebAdaptor，然后为虚拟机B上的Portal和Server重新配置WebAdaptor的，最后修改Portal和Server的托管关系</strong>。</p>
-<ul>
-<li>1、新建虚拟机B，并修改其计算机名为esri、DNS为tech，修改完成后，通过查看系统属性，可确认计算机全名为esri.tech。</li>
-</ul>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89%E6%9F%A5%E7%9C%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A8%E5%90%8D.png" alt="image"></p>
-<ul>
-<li><p>2、配置虚拟机B的hosts文件（C:\Windows\System32\drivers\etc），添加内容“192.168.1.1 example1.esri.com”，192.168.1.1为虚拟机A的IP地址，example1.esri.com为虚拟机A的计算机全名。这样就可以在虚拟机B中使用虚拟机A的域名访问Portal。</p>
-</li>
-<li><p>3、在虚拟机B上安装WebAdaptor。这里使用JAVA版的WebAdaptor，<a href="http://enterprise.arcgis.com/zh-cn/web-adaptor/latest/install/java-windows/welcome-arcgis-web-adaptor-install-guide.htm" target="_blank" rel="noopener">安装教程可参考ESRI官网</a>。</p>
-</li>
-<li><p>4、在虚拟机A中解除Portal的WebApdator配置。通过地址（<a href="https://example1.esri.com/portal）访问Portal的管理员页面，依次点击**System*" target="_blank" rel="noopener">https://example1.esri.com/portal）访问Portal的管理员页面，依次点击**System*</a>* 、<strong>WebAdaptor</strong> ，查看Portal配置的WebAdaptor。然后再依次点击<strong>对应的WebAdaptor名称</strong> (例如：example1.esri.com)、<strong>Unregister Web Adaptor</strong>。</p>
-</li>
-</ul>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-System.png" alt="image"></p>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-WebAdaptor.png" alt="image"></p>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-%E9%85%8D%E7%BD%AE%E7%9A%84WebApator.png" alt="image"></p>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-%E5%8F%8D%E6%B3%A8%E5%86%8CWebAdaptor.png" alt="image"></p>
-<ul>
-<li><p>5、在虚拟机A中解除Server的WebAdaptor配置。通过地址（<a href="https://exampl1.esri.com:6443/arcgis/manager）访问Server的管理员页面，依次点击**站点*" target="_blank" rel="noopener">https://exampl1.esri.com:6443/arcgis/manager）访问Server的管理员页面，依次点击**站点*</a>* 、<strong>Web Adaptor</strong> ，然后点击取消注册按钮<strong>×</strong> ，在弹出的确定窗口点击<strong>是</strong> , 取消Server的WebAdaptor注册。</p>
-</li>
-<li><p>6、在虚拟机B中按照官网教程在WebAdaotor分别注册Portal和Server。这里需要注意的是，此时的<strong>WebAdator地址是虚拟机B的WebAdator地址</strong>（例如：<a href="https://esri.tech/arcgis/webadaptor），而**Portal和Server地址是虚拟机A中的Portal和Server地址**（例如：Portal的地址为https://exampl1.esri.com:7443，Server的地址为https://example1.esri.com:6443）。" target="_blank" rel="noopener">https://esri.tech/arcgis/webadaptor），而**Portal和Server地址是虚拟机A中的Portal和Server地址**（例如：Portal的地址为https://exampl1.esri.com:7443，Server的地址为https://example1.esri.com:6443）。</a></p>
-</li>
-<li><p>7、修改Portal与Server的托管关系。在虚拟机B中访问页面Portal，依次点击<strong>Orgnaization</strong> 、 <strong>Servers</strong> 、 <strong>ADD SERVER</strong> ，然后在弹出的页面中，Services URL对应值为”<a href="https://esri.tech/arcgis/manager&quot;，Administration" target="_blank" rel="noopener">https://esri.tech/arcgis/manager&quot;，Administration</a> URL对应值为”<a href="https://esri.tech/arcgis/manager&quot;，Username和Password分别为Server的管理员账户和密码。" target="_blank" rel="noopener">https://esri.tech/arcgis/manager&quot;，Username和Password分别为Server的管理员账户和密码。</a></p>
-</li>
-</ul>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89/%E9%85%8D%E7%BD%AEPortal%E5%92%8CServer%E7%9A%84%E6%89%98%E7%AE%A1.png" alt="image"></p>
-<ul>
-<li>8、最后修改UrbaIOC的配置文件，然后将其部署到虚拟机B中tomacat中。</li>
-</ul>
-
-          
-        
       
     </div>
-    
-    
-    
-	
-	<div>
-	  
-	</div>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-    
-  </section>
 
   
 

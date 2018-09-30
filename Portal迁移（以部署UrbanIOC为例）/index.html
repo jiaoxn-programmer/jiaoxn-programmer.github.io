@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Portal," />
 
 
 
@@ -96,16 +96,25 @@
 
 
 
-<meta name="description" content="阿焦">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿焦的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="背景环境如下： 1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上； 2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）； 3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Porta">
+<meta name="keywords" content="Portal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Portal迁移（以部署UrbanIOC为例）">
+<meta property="og:url" content="http://yoursite.com/Portal迁移（以部署UrbanIOC为例）/index.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="阿焦">
+<meta property="og:description" content="背景环境如下： 1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上； 2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）； 3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Porta">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89%E6%9F%A5%E7%9C%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A8%E5%90%8D.png">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-System.png">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-WebAdaptor.png">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-%E9%85%8D%E7%BD%AE%E7%9A%84WebApator.png">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89Portal%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2-%E5%8F%8D%E6%B3%A8%E5%86%8CWebAdaptor.png">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89/%E9%85%8D%E7%BD%AEPortal%E5%92%8CServer%E7%9A%84%E6%89%98%E7%AE%A1.png">
+<meta property="og:updated_time" content="2018-05-23T03:22:15.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿焦的博客">
-<meta name="twitter:description" content="阿焦">
+<meta name="twitter:title" content="Portal迁移（以部署UrbanIOC为例）">
+<meta name="twitter:description" content="背景环境如下： 1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上； 2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）； 3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Porta">
+<meta name="twitter:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018-05-23/1%E3%80%81Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89%E6%9F%A5%E7%9C%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A8%E5%90%8D.png">
 
 
 
@@ -135,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/Portal迁移（以部署UrbanIOC为例）/"/>
 
 
 
 
 
-  <title>阿焦的博客</title>
+  <title>Portal迁移（以部署UrbanIOC为例） | 阿焦的博客</title>
   
 
 
@@ -160,8 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,9 +262,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -286,9 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Portal迁移（以部署UrbanIOC为例）/" itemprop="url">Portal迁移（以部署UrbanIOC为例）</a></h1>
+          <h1 class="post-title" itemprop="name headline">Portal迁移（以部署UrbanIOC为例）</h1>
         
 
         <div class="post-meta">
@@ -342,6 +348,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -391,9 +402,7 @@
       
 
       
-        
-          
-            <p>背景环境如下：</p>
+        <p>背景环境如下：</p>
 <p>1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上；</p>
 <p>2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）；</p>
 <p>3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Portal安装不成功），现需要使用此域名访问UrbanIOC。</p>
@@ -427,8 +436,6 @@
 <li>8、最后修改UrbaIOC的配置文件，然后将其部署到虚拟机B中tomacat中。</li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -436,6 +443,12 @@
     
 	
 	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
 	  
 	</div>
 
@@ -447,14 +460,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Portal/" rel="tag"><i class="fa fa-tag"></i> Portal</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -464,10 +483,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -475,6 +495,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDA0Mi8xNjU2OQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -773,6 +802,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -801,6 +834,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
