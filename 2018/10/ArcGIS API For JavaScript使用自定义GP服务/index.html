@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ArcGIS API For JavaScript,GP服务," />
+
+
+
+
+
+  <link rel="alternate" href="/node_modules/hexo-generator-feed/atom.xml" title="阿焦的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
+<meta name="keywords" content="ArcGIS API For JavaScript,GP服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcGIS API For JavaScript使用自定义GP服务">
+<meta property="og:url" content="http://yoursite.com/2018/10/ArcGIS API For JavaScript使用自定义GP服务/index.html">
+<meta property="og:site_name" content="阿焦的博客">
+<meta property="og:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/ArcMap%20Results%E7%AA%97%E5%8F%A3ArcMap%20Results%E7%AA%97%E5%8F%A3.png">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/Server%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%A4%B9TIM%E6%88%AA%E5%9B%BE20181013164258.png">
+<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/GP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9CGP%E6%9C%8D%E5%8A%A1%E5%8F%91%E5%B8%83-%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C.png">
+<meta property="og:updated_time" content="2018-10-13T09:18:48.540Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ArcGIS API For JavaScript使用自定义GP服务">
+<meta name="twitter:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
+<meta name="twitter:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/ArcMap%20Results%E7%AA%97%E5%8F%A3ArcMap%20Results%E7%AA%97%E5%8F%A3.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/ArcGIS API For JavaScript使用自定义GP服务/"/>
+
+
+
+
+
+  <title>ArcGIS API For JavaScript使用自定义GP服务 | 阿焦的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">阿焦的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一名拥抱AI的GISer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/ArcGIS API For JavaScript使用自定义GP服务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JiaoXN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿焦的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ArcGIS API For JavaScript使用自定义GP服务</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-13T00:00:00+08:00">
+                2018-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>概述：</strong>通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。</p>
+<h2 id="使用ArcMap发布自定义GP服务"><a href="#使用ArcMap发布自定义GP服务" class="headerlink" title="使用ArcMap发布自定义GP服务"></a>使用ArcMap发布自定义GP服务</h2><p>在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗口中，展开刚刚执行的任务可以查看此任务的执行的详细情况，也可以通过这些描述查看任务执行失败的原因。</p>
+<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/ArcMap%20Results%E7%AA%97%E5%8F%A3ArcMap%20Results%E7%AA%97%E5%8F%A3.png" alt="images"></p>
+<p>在这个窗口，右键想要发布的成GP服务的工具或者模型，然后依次选择<strong>Share As</strong>、<strong>Geoprecessing Services</strong>打开服务发布窗口。</p>
+<ul>
+<li><p>如果想发布一个新的GP服务，则选择选择Publish a service；如果想覆盖已存在的GP服务，则选择Overwrite an existing service；如果只想发布一个服务定义文件，则选择第二项。这里我们选择第一项，发布一个新GP服务。点击“下一步”按钮，打开下一步操作。</p>
+</li>
+<li><p>在这一步中，选择一个ArcGIS Server连接，也就GP服务打算在哪个ArcGIS Server上发布，然后自定义服务名称。点击“下一步”按钮，打开下一步操作。</p>
+</li>
+<li><p>在这一步中，需要配置GP服务在ArcGIS Server服务器上的存储位置，可以创建一个新的文件夹，也可以选择已存在的文件夹。如果选择root文件夹，则发布的服务在ArcGIS Server首页中会看到，如果选择其他文件夹，则需要切换。点击“Continue”按钮，打开下一步操作。</p>
+</li>
+</ul>
+<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/Server%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%A4%B9TIM%E6%88%AA%E5%9B%BE20181013164258.png" alt="images"></p>
+<ul>
+<li>在Service Editor窗口中，可以配置服务的其他参数。一般的流程是，首先点击右上角的“Analyze”按钮，让软件自动分析当前服务如果要发布会存在哪些问题。通常情况下，如果分析结果中没有Error这一项，就可以点击Publish按钮发布服务了。在分析结果，双击某一项分析结果，当前窗口会自动<br>跳转到这个结果的配置界面。在这一步需要<strong>值得注意</strong>的是，如果需要在JS API中获取GP服务的执行结果，<strong>一定要勾选View results with a map serveice</strong>。顾名思义，勾选这个以后，可以以调用MapService的方式调用GP服务的执行结果。</li>
+</ul>
+<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/GP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9CGP%E6%9C%8D%E5%8A%A1%E5%8F%91%E5%B8%83-%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C.png" alt="images"></p>
+<h2 id="ArcGIS-API-For-JavaScript-使用发布的自定义GP服务"><a href="#ArcGIS-API-For-JavaScript-使用发布的自定义GP服务" class="headerlink" title="ArcGIS API For JavaScript 使用发布的自定义GP服务"></a>ArcGIS API For JavaScript 使用发布的自定义GP服务</h2><p>在JavaScript API中调用自定义GP服务与调用ArcGIS Server自带的GP服务方式是一样的，首先呢，需要在ArcGIS Server中获得GP服务的调用地址。</p>
+<ul>
+<li><p>在ArcGIS Server页面找到我们想调用的GP服务，然后点击服务名称，打开该服务的详细信息界面。</p>
+</li>
+<li><p>点击左侧的Capibilities选项卡，然后点击右侧的Rest URL地址，打开一个新的标签页。</p>
+</li>
+<li><p>在新的标签页中，点击Tasks下面的工具/模型名称，然后复制浏览器中URL，这就是我们要使用的GP服务的调用地址。在这个页面中，也可以查看这个GP服务的参数信息。</p>
+</li>
+</ul>
+<p>接下来要做的就是在JS代码中调用这个GP服务。这个调用方式也比较简单，首先需要做的就是在dojo中引入”esri/tasks/Geoprocessor”,然后使用GP服务地址初始化Geoprocessor、配置GP服务参数、调用submitJob函数执行GP服务，最后在异步函数中获得GP服务的返回结果。</p>
+<p>示例代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">"esri/tasks/Geoprocessor"</span>],</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">Geoprocessor</span>) </span>&#123;</span><br><span class="line">		returen declare(<span class="literal">null</span>, &#123;</span><br><span class="line">			gp_example: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">				<span class="keyword">var</span> gp_service_url = <span class="string">"https://localhost:6443/arcgis/rest/services/IDW/Model2222/GPServer/IDW_24"</span>;  <span class="comment">// GP服务地址</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 配置GP服务参数</span></span><br><span class="line">				<span class="keyword">var</span> gp_parameters = &#123;</span><br><span class="line">                    ZValue: <span class="string">"rain"</span>,</span><br><span class="line">                    OutputCellSize: <span class="number">0.005</span></span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">                <span class="keyword">var</span> idw_gp = Geoprocessor(gp_service_url);</span><br><span class="line">                idw_gp.submitJob(gp_parameters, gp_job_complete, gp_job_status, gp_job_failed);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// GP服务执行完成后异步调用</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_complete</span>(<span class="params">job_info</span>) </span>&#123;</span><br><span class="line">                    idw_gp.getResultImageLayer(job_info.jobId, <span class="literal">null</span>, <span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params">layer</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> gp_result_lyrs_url = layer.url;  <span class="comment">// 获取GP服务执行结果的访问地址，如果想访问某个结果，可在后面添加"/" + 结果的索引号（从0开始）访问</span></span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 访问GP服务的执行状态</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_status</span>(<span class="params">job_info</span>) </span>&#123;</span><br><span class="line">					<span class="keyword">var</span> job_status = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">switch</span> (job_info.jobStatus) &#123;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobSubmitted"</span>:</span><br><span class="line">                            job_status = <span class="string">"提交插值任务..."</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobExecuting"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值处理..."</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobFailed"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值失败"</span>;</span><br><span class="line">                            alert(<span class="string">"抱歉，执行插值操作失败，请重新点击！"</span>);</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobSucceeded"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值成功"</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// GP服务执行失败后异步调用</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_failed</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"抱歉，执行插值操作失败，请重新点击！"</span>);</span><br><span class="line">                &#125;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+	
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+	  
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArcGIS-API-For-JavaScript/" rel="tag"><i class="fa fa-tag"></i> ArcGIS API For JavaScript</a>
+          
+            <a href="/tags/GP服务/" rel="tag"><i class="fa fa-tag"></i> GP服务</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item/" rel="next" title="ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item">
+                <i class="fa fa-chevron-left"></i> ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/Windows Server 2008 R2安装PostgreSQL数据库可能出现的问题及解决方法/" rel="prev" title="Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法">
+                Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDA0Mi8xNjU2OQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">JiaoXN</p>
+              <p class="site-description motion-element" itemprop="description">阿焦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/node_modules/hexo-generator-feed/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用ArcMap发布自定义GP服务"><span class="nav-number">1.</span> <span class="nav-text">使用ArcMap发布自定义GP服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArcGIS-API-For-JavaScript-使用发布的自定义GP服务"><span class="nav-number">2.</span> <span class="nav-text">ArcGIS API For JavaScript 使用发布的自定义GP服务</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiaoXN</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">2.9k</span>
+  
+</div>
+
+
+  <!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> -->
+
+
+
+  <!-- <span class="post-meta-divider">|</span> -->
+
+
+
+  <!-- <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div> -->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

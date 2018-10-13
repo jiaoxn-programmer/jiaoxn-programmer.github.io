@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/10/ArcGIS%20API%20For%20JavaScript%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89GP%E6%9C%8D%E5%8A%A1/</loc>
+    
+    <lastmod>2018-10-13T09:18:48.540Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/5/Webstorm%E9%85%8D%E7%BD%AETomcat/</loc>
+    
+    <lastmod>2018-10-13T07:14:47.943Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/5/Portal%E6%B3%A8%E5%86%8CAPP/</loc>
+    
+    <lastmod>2018-10-13T07:14:27.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/5/Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89/</loc>
+    
+    <lastmod>2018-10-13T07:14:10.349Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/10/ArcGIS%20Runtime%20SDK%20for%20Android(100.3)%E8%AE%BF%E9%97%AEArcGIS%20Online%E6%88%96Portal%E4%B8%AD%E7%9A%84Item/</loc>
     
-    <lastmod>2018-10-05T03:42:16.291Z</lastmod>
+    <lastmod>2018-10-13T07:14:08.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/10/Windows%20Server%202008%20R2%E5%AE%89%E8%A3%85PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2018-10-13T07:12:40.961Z</lastmod>
     
   </url>
   
@@ -26,27 +61,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2018-09-30T04:37:56.783Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/5/Portal%E8%BF%81%E7%A7%BB%EF%BC%88%E4%BB%A5%E9%83%A8%E7%BD%B2UrbanIOC%E4%B8%BA%E4%BE%8B%EF%BC%89/</loc>
-    
-    <lastmod>2018-05-23T03:22:15.260Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/5/Portal%E6%B3%A8%E5%86%8CAPP/</loc>
-    
-    <lastmod>2018-05-15T07:20:51.990Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/5/Webstorm%E9%85%8D%E7%BD%AETomcat/</loc>
-    
-    <lastmod>2018-05-15T04:23:42.120Z</lastmod>
     
   </url>
   
