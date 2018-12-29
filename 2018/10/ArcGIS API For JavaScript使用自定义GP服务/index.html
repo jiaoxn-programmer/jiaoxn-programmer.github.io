@@ -104,14 +104,10 @@
 <meta property="og:site_name" content="阿焦的博客">
 <meta property="og:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/ArcMap%20Results%E7%AA%97%E5%8F%A3ArcMap%20Results%E7%AA%97%E5%8F%A3.png">
-<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/Server%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%A4%B9TIM%E6%88%AA%E5%9B%BE20181013164258.png">
-<meta property="og:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/GP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9CGP%E6%9C%8D%E5%8A%A1%E5%8F%91%E5%B8%83-%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C.png">
-<meta property="og:updated_time" content="2018-10-13T09:18:48.540Z">
+<meta property="og:updated_time" content="2018-12-29T01:36:26.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArcGIS API For JavaScript使用自定义GP服务">
 <meta name="twitter:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
-<meta name="twitter:image" content="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/ArcMap%20Results%E7%AA%97%E5%8F%A3ArcMap%20Results%E7%AA%97%E5%8F%A3.png">
 
 
 
@@ -362,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  1.2k
                 </span>
               
 
@@ -401,8 +397,7 @@
       
         <p><strong>概述：</strong>通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。</p>
 <h2 id="使用ArcMap发布自定义GP服务"><a href="#使用ArcMap发布自定义GP服务" class="headerlink" title="使用ArcMap发布自定义GP服务"></a>使用ArcMap发布自定义GP服务</h2><p>在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗口中，展开刚刚执行的任务可以查看此任务的执行的详细情况，也可以通过这些描述查看任务执行失败的原因。</p>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/ArcMap%20Results%E7%AA%97%E5%8F%A3ArcMap%20Results%E7%AA%97%E5%8F%A3.png" alt="images"></p>
-<p>在这个窗口，右键想要发布的成GP服务的工具或者模型，然后依次选择<strong>Share As</strong>、<strong>Geoprecessing Services</strong>打开服务发布窗口。</p>
+<p>在打开的窗口中，右键想要发布的成GP服务的工具或者模型，然后依次选择<strong>Share As</strong>、<strong>Geoprecessing Services</strong>打开服务发布窗口。</p>
 <ul>
 <li><p>如果想发布一个新的GP服务，则选择选择Publish a service；如果想覆盖已存在的GP服务，则选择Overwrite an existing service；如果只想发布一个服务定义文件，则选择第二项。这里我们选择第一项，发布一个新GP服务。点击“下一步”按钮，打开下一步操作。</p>
 </li>
@@ -410,12 +405,9 @@
 </li>
 <li><p>在这一步中，需要配置GP服务在ArcGIS Server服务器上的存储位置，可以创建一个新的文件夹，也可以选择已存在的文件夹。如果选择root文件夹，则发布的服务在ArcGIS Server首页中会看到，如果选择其他文件夹，则需要切换。点击“Continue”按钮，打开下一步操作。</p>
 </li>
+<li><p>在Service Editor窗口中，可以配置服务的其他参数。一般的流程是，首先点击右上角的“Analyze”按钮，让软件自动分析当前服务如果要发布会存在哪些问题。通常情况下，如果分析结果中没有Error这一项，就可以点击Publish按钮发布服务了。在分析结果，双击某一项分析结果，当前窗口会自动<br>跳转到这个结果的配置界面。在这一步需要<strong>值得注意</strong>的是，如果需要在JS API中获取GP服务的执行结果，<strong>一定要勾选View results with a map serveice</strong>。顾名思义，勾选这个以后，可以以调用MapService的方式调用GP服务的执行结果。</p>
+</li>
 </ul>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/Server%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%A4%B9TIM%E6%88%AA%E5%9B%BE20181013164258.png" alt="images"></p>
-<ul>
-<li>在Service Editor窗口中，可以配置服务的其他参数。一般的流程是，首先点击右上角的“Analyze”按钮，让软件自动分析当前服务如果要发布会存在哪些问题。通常情况下，如果分析结果中没有Error这一项，就可以点击Publish按钮发布服务了。在分析结果，双击某一项分析结果，当前窗口会自动<br>跳转到这个结果的配置界面。在这一步需要<strong>值得注意</strong>的是，如果需要在JS API中获取GP服务的执行结果，<strong>一定要勾选View results with a map serveice</strong>。顾名思义，勾选这个以后，可以以调用MapService的方式调用GP服务的执行结果。</li>
-</ul>
-<p><img src="http://ows59ec4r.bkt.clouddn.com/%E5%9B%BE%E7%89%87/2018/10/GP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9CGP%E6%9C%8D%E5%8A%A1%E5%8F%91%E5%B8%83-%E9%85%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C.png" alt="images"></p>
 <h2 id="ArcGIS-API-For-JavaScript-使用发布的自定义GP服务"><a href="#ArcGIS-API-For-JavaScript-使用发布的自定义GP服务" class="headerlink" title="ArcGIS API For JavaScript 使用发布的自定义GP服务"></a>ArcGIS API For JavaScript 使用发布的自定义GP服务</h2><p>在JavaScript API中调用自定义GP服务与调用ArcGIS Server自带的GP服务方式是一样的，首先呢，需要在ArcGIS Server中获得GP服务的调用地址。</p>
 <ul>
 <li><p>在ArcGIS Server页面找到我们想调用的GP服务，然后点击服务名称，打开该服务的详细信息界面。</p>
@@ -564,7 +556,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -586,7 +578,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -694,7 +686,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.9k</span>
+    <span title="Site words total count">6.3k</span>
   
 </div>
 

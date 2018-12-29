@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="Android,Portal," />
+  <meta name="keywords" content="Python,部署,Centos," />
 
 
 
@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="概述：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。 ArcGIS Runtime 提供了两种认">
-<meta name="keywords" content="Android,Portal">
+<meta name="description" content="Centos部署Python环境部署Flask应用需要提前配置Python环境，如果您的Centos机器中没有Python环境，可以参考我的另外一篇博客《Centos离线安装Python》，在Centos中离线部署Python环境。 安装Flask应用所需的Python库这一步的安装，有以下假设：  假设您已经下载了Flask应用所需的Python库，并存放在Centos机器的，提取码：ovjm）">
+<meta name="keywords" content="Python,部署,Centos">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item">
-<meta property="og:url" content="http://yoursite.com/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item/index.html">
+<meta property="og:title" content="Centos使用Nginx+Supervisor离线部署Flask应用">
+<meta property="og:url" content="http://yoursite.com/2018/12/Centos使用Nginx+Supervisor离线部署Flask应用/index.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="概述：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。 ArcGIS Runtime 提供了两种认">
+<meta property="og:description" content="Centos部署Python环境部署Flask应用需要提前配置Python环境，如果您的Centos机器中没有Python环境，可以参考我的另外一篇博客《Centos离线安装Python》，在Centos中离线部署Python环境。 安装Flask应用所需的Python库这一步的安装，有以下假设：  假设您已经下载了Flask应用所需的Python库，并存放在Centos机器的，提取码：ovjm）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-13T07:14:08.904Z">
+<meta property="og:updated_time" content="2018-12-29T00:53:06.036Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item">
-<meta name="twitter:description" content="概述：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。 ArcGIS Runtime 提供了两种认">
+<meta name="twitter:title" content="Centos使用Nginx+Supervisor离线部署Flask应用">
+<meta name="twitter:description" content="Centos部署Python环境部署Flask应用需要提前配置Python环境，如果您的Centos机器中没有Python环境，可以参考我的另外一篇博客《Centos离线安装Python》，在Centos中离线部署Python环境。 安装Flask应用所需的Python库这一步的安装，有以下假设：  假设您已经下载了Flask应用所需的Python库，并存放在Centos机器的，提取码：ovjm）">
 
 
 
@@ -137,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/Centos使用Nginx+Supervisor离线部署Flask应用/"/>
 
 
 
 
 
-  <title>ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item | 阿焦的博客</title>
+  <title>Centos使用Nginx+Supervisor离线部署Flask应用 | 阿焦的博客</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/Centos使用Nginx+Supervisor离线部署Flask应用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiaoXN">
@@ -287,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item</h1>
+          <h1 class="post-title" itemprop="name headline">Centos使用Nginx+Supervisor离线部署Flask应用</h1>
         
 
         <div class="post-meta">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T00:00:00+08:00">
-                2018-10-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T00:00:00+08:00">
+                2018-12-25
               </time>
             
 
@@ -322,8 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ESRI/" itemprop="url" rel="index">
-                    <span itemprop="name">ESRI</span>
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
                   </a>
                 </span>
 
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  420
+                  1.1k
                 </span>
               
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -395,17 +395,44 @@
       
 
       
-        <p><strong>概述</strong>：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。</p>
-<p>ArcGIS Runtime 提供了两种认证模式：App login 和 Named user login。本篇博客使用Named user login 认证模式。</p>
-<p> 使用Named user login认证模式需要使用可登陆Portal（或者ArcGIS Online）的用户名和与其对应的密码。登陆后，操作者<strong>可访问该用户的私有内容或者该用户所在组织的分享给该用户的内容，可创建、更新和删除用户内容，可访问高级内容（如：geocoding、routing），可分享内容给所在组织的其他用户</strong>。因此，使用这种认证模式需要考虑相应的风险。好了，废物不多说，下面直接上干货。</p>
-<p>首先呢，需要先配置AuthenticationManager，主要是为了显示在App中显示出登录界面，这个界面不需要咱们自己写，配置好后，会自动弹出。代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AuthenticationChallengeHandler authenticationChallengeHandler =</span><br><span class="line">                <span class="keyword">new</span> DefaultAuthenticationChallengeHandler(<span class="keyword">this</span>);</span><br><span class="line">AuthenticationManager.setAuthenticationChallengeHandler(authenticationChallengeHandler);</span><br></pre></td></tr></table></figure>
-<p>其次，需要设置Portal，并设置监听函数。代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Portal portal = <span class="keyword">new</span> Portal(<span class="string">"https://www.arcgis.com"</span>, <span class="keyword">true</span>);</span><br><span class="line">portal.addDoneLoadingListener(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (portal.getLoadStatus() == LoadStatus.LOADED) &#123;</span><br><span class="line">        <span class="comment">// do something when you login successfully</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (portal.getLoadStatus() == LoadStatus.FAILED_TO_LOAD) &#123;</span><br><span class="line">        <span class="comment">// // do something when you login failed</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">portal.loadAsync();</span><br></pre></td></tr></table></figure>
-<p>最后，使用Portal中的Item对应的Id创建ScencLayer或者Scene。相应代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PortalItem portalItem = <span class="keyword">new</span> PortalItem(portal, <span class="string">"465077bf1afa4d048f2875eba679c4e6"</span>);</span><br><span class="line">ArcGISSceneLayer arcGISSceneLayer = <span class="keyword">new</span> ArcGISSceneLayer(portalItem);</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PortalItem portalItem = <span class="keyword">new</span> PortalItem(portal, <span class="string">"465077bf1afa4d048f2875eba679c4e6"</span>);</span><br><span class="line">ArcGISScene arcGISScene = <span class="keyword">new</span> ArcGISScene(portalItem);</span><br></pre></td></tr></table></figure>
-<p>其中，”465077bf1afa4d048f2875eba679c4e6”为Item的Id。在Portal（或者ArcGIS Online）中访问Item时，其对应的URL最后（如：**id=04ca8335c37a4ced90cd829c49b0a900）有该内容对应的ID。</p>
+        <h2 id="Centos部署Python环境"><a href="#Centos部署Python环境" class="headerlink" title="Centos部署Python环境"></a>Centos部署Python环境</h2><p>部署Flask应用需要提前配置Python环境，如果您的Centos机器中没有Python环境，可以参考我的另外一篇博客《Centos离线安装Python》，在Centos中离线部署Python环境。</p>
+<h2 id="安装Flask应用所需的Python库"><a href="#安装Flask应用所需的Python库" class="headerlink" title="安装Flask应用所需的Python库"></a>安装Flask应用所需的Python库</h2><p>这一步的安装，有以下假设：</p>
+<ul>
+<li>假设您已经下载了Flask应用所需的Python库，并存放在Centos机器的<figure class="highlight plain"><figcaption><span>，提取码：ovjm）。如果我提供的Python库不能满足您的需求，您可以把下载后的Python库存放在06-python-packages文件夹中</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">* 假设您的Flask应用有requirements.txt文件存储Flask应用所需的Python库；如果通过命令```pip freeze &gt; requirements.txt```导出Flask应用依赖的库至requirements.txt文件。</span><br><span class="line"></span><br><span class="line">以上的假设，如果都满足了，可以开始安装Flaks应用依赖的Python库。</span><br><span class="line"></span><br><span class="line">* 在Centos中，使用命令进入Flask应用的根目录</span><br><span class="line">* 使用命令```pip install --no-index --find-links=/root/softwares/06-python-packages/ -r requirements.txt```安装Python库</span><br><span class="line"></span><br><span class="line">## 安装、配置supervisor</span><br><span class="line"></span><br><span class="line">### 安装supervisor</span><br><span class="line"></span><br><span class="line">* 使用命令```cd /root/softwares/09-supervisor```进入09-supervisor文件夹</span><br><span class="line">* 使用命令```rpm -Uvh *.rpm --nodeps --force```安装supervisor</span><br><span class="line"></span><br><span class="line">### 为Flask配置supervisor</span><br><span class="line"></span><br><span class="line">* 使用命令```echo_supervisord_conf &gt; /etc/supervisord.d/flask.conf```创建flask.conf文件</span><br><span class="line">* 使用命令```vi /etc/supervisord.d/flask.conf```打开该文件，并在此文件的最下方添加以下内容</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>[program:yngt]<br>command=python3 manage.py runserve<br>directory=/root/resources_directory_tree/server<br>startsecs=1<br>autostart=true<br>autorestart=true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">相关的配置选项的意思如下：</span><br><span class="line"></span><br><span class="line">* ```yngt```表示supervisor子进程的名称</span><br><span class="line">* ```directory```表示脚本目录</span><br><span class="line">* ```command```表示脚本执行的命令</span><br><span class="line">* ```startsecs```表示子进程启动多少秒之后，如果其状态为RUNNING，则supervisor认为其已经启动</span><br><span class="line">* ```autostart```表示子进程会随着supervisor启动而启动</span><br><span class="line">* ```autorestart```表示如果子进程如果异常退出后，是否会自动重启，共有true、false和unexpected，其中unexpected表示如果子进程的退出码不再exitcodes里定义的退出码时，才会自动重启</span><br><span class="line"></span><br><span class="line">更多的配置选项请查看 https://wuguiyunwei.com/index.php/2017/06/26/1028.html</span><br><span class="line"></span><br><span class="line">### 启动supervisor子进程</span><br><span class="line"></span><br><span class="line">* 使用命令```supervisord -c /etc/supervisord.d/flask.conf```初始化supervisor</span><br><span class="line">* 使用命令```supervisorctl -c /etc/supervisord.d/flask.conf ``` 进入supervisorctl命令管理界面</span><br><span class="line">* 使用命令```start yngt```启动子进程，其中yngt表示上一步配置中的子进程名称</span><br><span class="line">* 如果Centos重启后，子进程没有自动启动，请重复这一步操作</span><br><span class="line"></span><br><span class="line">## 安装Nginx</span><br><span class="line">### 安装nginx</span><br><span class="line"></span><br><span class="line">* 使用命令```cd /root/softwares/03-nginx```进入03-nginx文件夹</span><br><span class="line">* 使用命令```tar -xzvf nginx-1.14.2.tar.gz```解压，然后```cd nginx-1.14.2/```进入nginx-1.14.2文件夹</span><br><span class="line">* 使用命令```./configure --prefix=/usr/local/nginx```配置nginx的编译选项，其中prefix指定了安装路径</span><br><span class="line">* 使用命令```make```编译nginx源代码</span><br><span class="line">* 使用命令```make install```安装编译后的nginx</span><br><span class="line">* 使用命令```ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx```配置nginx可以全局访问</span><br><span class="line">* 使用命令```nginx -v```，如果能够获取到nginx的版本，表示nginx安装成功</span><br><span class="line"></span><br><span class="line">### 将nginx添加到系统服务</span><br><span class="line"></span><br><span class="line">* 使用命令```vi /etc/init.d/nginx```创建文件，并输入以下内容</span><br></pre></td></tr></table></figure></p>
+<p>#! /bin/bash</p>
+<h1 id="chkconfig-85-15"><a href="#chkconfig-85-15" class="headerlink" title="chkconfig: - 85 15"></a>chkconfig: - 85 15</h1><p>PATH=/usr/local/nginx<br>DESC=”nginx daemon”<br>NAME=nginx<br>DAEMON=$PATH/sbin/$NAME<br>CONFIGFILE=$PATH/conf/$NAME.conf<br>PIDFILE=$PATH/logs/$NAME.pid<br>SCRIPTNAME=/etc/init.d/$NAME<br>set -e<br>[ -x “$DAEMON” ] || exit 0<br>do_start() {<br>$DAEMON -c $CONFIGFILE || echo -n “nginx already running”<br>}<br>do_stop() {<br>$DAEMON -s stop || echo -n “nginx not running”<br>}<br>do_reload() {<br>$DAEMON -s reload || echo -n “nginx can’t reload”<br>}<br>case “$1” in<br>start)<br>echo -n “Starting $DESC: $NAME”<br>do_start<br>echo “.”<br>;;<br>stop)<br>echo -n “Stopping $DESC: $NAME”<br>do_stop<br>echo “.”<br>;;<br>reload|graceful)<br>echo -n “Reloading $DESC configuration…”<br>do_reload<br>echo “.”<br>;;<br>restart)<br>echo -n “Restarting $DESC: $NAME”<br>do_stop<br>do_start<br>echo “.”<br>;;<br>*)<br>echo “Usage: $SCRIPTNAME {start|stop|reload|restart}” &gt;&amp;2<br>exit 3<br>;;<br>esac<br>exit 0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* 使用命令```chmod a+x /etc/init.d/nginx```设置权限</span><br><span class="line">* 使用命令```chkconfig --add nginx```注册成服务</span><br><span class="line">* 使用命令```chkconfig nginx on```配置开机启动</span><br><span class="line"></span><br><span class="line">### 为Flask应用配置nginx</span><br><span class="line"></span><br><span class="line">* 使用命令```vi /usr/local/nginx/conf/nginx.conf```打开nginx默认配置文件，修改server配置如下：</span><br></pre></td></tr></table></figure></p>
+<p>server {<br>        listen       80;<br>        server_name  localhost;</p>
+<pre><code>#charset koi8-r;
+
+#access_log  logs/host.access.log  main;
+
+location / {
+    root   html;
+    proxy_pass http://127.0.0.1:5000;
+    proxy_set_header Host $host;        
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    index  index.html index.htm;
+}
+</code></pre><p><code>`</code></p>
+<p>其中，proxy_pass和proxy_set_header是新增的配置，其余不变。</p>
+<ul>
+<li>使用命令<code>systemctl reload nginx.service</code>重新加载nginx配置文件</li>
+<li>使用命令<code>nginx -t</code>，如果提示successful信息，表示nginx配置文件加载成功</li>
+</ul>
+<h3 id="nginx常用命令"><a href="#nginx常用命令" class="headerlink" title="nginx常用命令"></a>nginx常用命令</h3><ul>
+<li><code>systemctl start nginx.service</code>，启动nginx服务</li>
+<li><code>systemctl stop nginx.service</code>，停止nginx服务</li>
+<li><code>systemctl restart nginx.service</code>，重启nginx服务</li>
+<li><code>systemctl reload nginx.service</code>重新加载nginx配置文件</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如果您想了解更多的关于nginx的内容，请查看以下链接：</p>
+<ul>
+<li>Nginx简介：<a href="https://blog.csdn.net/javalean/article/details/80083555" target="_blank" rel="noopener">https://blog.csdn.net/javalean/article/details/80083555</a></li>
+<li>Nginx简介：<a href="https://blog.csdn.net/MrJavaweb/article/details/79635430" target="_blank" rel="noopener">https://blog.csdn.net/MrJavaweb/article/details/79635430</a></li>
+<li>Nginx的介绍和使用：<a href="https://www.cnblogs.com/yaomajor/p/6272647.html" target="_blank" rel="noopener">https://www.cnblogs.com/yaomajor/p/6272647.html</a></li>
+</ul>
 
       
     </div>
@@ -433,9 +460,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
-            <a href="/tags/Portal/" rel="tag"><i class="fa fa-tag"></i> Portal</a>
+            <a href="/tags/部署/" rel="tag"><i class="fa fa-tag"></i> 部署</a>
+          
+            <a href="/tags/Centos/" rel="tag"><i class="fa fa-tag"></i> Centos</a>
           
         </div>
       
@@ -448,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/5/Portal迁移（以部署UrbanIOC为例）/" rel="next" title="Portal迁移（以部署UrbanIOC为例）">
-                <i class="fa fa-chevron-left"></i> Portal迁移（以部署UrbanIOC为例）
+              <a href="/2018/12/Centos离线安装Python/" rel="next" title="Centos离线安装Python">
+                <i class="fa fa-chevron-left"></i> Centos离线安装Python
               </a>
             
           </div>
@@ -458,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/ArcGIS API For JavaScript使用自定义GP服务/" rel="prev" title="ArcGIS API For JavaScript使用自定义GP服务">
-                ArcGIS API For JavaScript使用自定义GP服务 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/Windows系统下定时执行Python程序/" rel="prev" title="Windows系统下定时执行Python程序">
+                Windows系统下定时执行Python程序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -619,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Centos部署Python环境"><span class="nav-number">1.</span> <span class="nav-text">Centos部署Python环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Flask应用所需的Python库"><span class="nav-number">2.</span> <span class="nav-text">安装Flask应用所需的Python库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chkconfig-85-15"><span class="nav-number"></span> <span class="nav-text">chkconfig: - 85 15</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx常用命令"><span class="nav-number">0.1.</span> <span class="nav-text">nginx常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">0.2.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
