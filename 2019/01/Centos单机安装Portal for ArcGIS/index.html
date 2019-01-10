@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="本篇博客简要介绍了如何在纯净的Centos机器上部署ArcGIS Server、ArcGIS Web Adaptor、ArcGIS DataStore和Portal for ArcGIS。在阅读本篇博客之前，您需要提前了解一些Linux系统的操作，比如使用命令行导航到某个文件夹、使用vi编辑文件等。 1 安装前准备1.1 配置Centos网卡如果在Centos虚拟机上安装Portal，常常用Xsh">
+<meta name="description" content="本篇博客简要介绍了如何在纯净的Centos机器上部署ArcGIS Server、ArcGIS Web Adaptor、ArcGIS DataStore和Portal for ArcGIS。在阅读本篇博客之前，您需要提前了解一些Linux系统的操作，比如使用命令行导航到某个文件夹、使用vi编辑文件等。 安装前准备配置Centos网卡如果在Centos虚拟机上安装Portal，常常用Xshell +">
 <meta name="keywords" content="Portal,安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos单机安装Portal">
 <meta property="og:url" content="http://yoursite.com/2019/01/Centos单机安装Portal for ArcGIS/index.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="本篇博客简要介绍了如何在纯净的Centos机器上部署ArcGIS Server、ArcGIS Web Adaptor、ArcGIS DataStore和Portal for ArcGIS。在阅读本篇博客之前，您需要提前了解一些Linux系统的操作，比如使用命令行导航到某个文件夹、使用vi编辑文件等。 1 安装前准备1.1 配置Centos网卡如果在Centos虚拟机上安装Portal，常常用Xsh">
+<meta property="og:description" content="本篇博客简要介绍了如何在纯净的Centos机器上部署ArcGIS Server、ArcGIS Web Adaptor、ArcGIS DataStore和Portal for ArcGIS。在阅读本篇博客之前，您需要提前了解一些Linux系统的操作，比如使用命令行导航到某个文件夹、使用vi编辑文件等。 安装前准备配置Centos网卡如果在Centos虚拟机上安装Portal，常常用Xshell +">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/c79a055f0a417341f4f1c60d8ff19fe5?fid=354421848-250528-612570338967173&time=1547100000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-46eePgGIVumWri2TWmqn1jiwj0g%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=222285237307069776&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
 <meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/7570cc9821e4993b0e608efbf9bf4695?fid=354421848-250528-713581496542146&time=1547100000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-UOb48ZxRt6L665jYsFQ6LPfSNJc%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=222520869842238556&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
@@ -110,10 +110,10 @@
 <meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/a9cd89b90c6e54f6e9e46b1b6f74b6c0?fid=354421848-250528-280087046436639&time=1547100000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-fsK%2FKGPbuhGuFnen6JQbxqker3w%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=222980862264898358&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
 <meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/885731c98750b78e8bc93ee17d3ea061?fid=354421848-250528-409605807645804&time=1547100000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-fsS4%2BIkplLVpfTSlMP0QWOcOsIc%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=223022832888617639&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
 <meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/6d3bf44039ab1b657c3a92908e67b98e?fid=354421848-250528-535068382982394&time=1547107200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-wsj95btmXea%2FZp%2FrKc1ipwQ99VE%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=224363756639404276&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:updated_time" content="2019-01-10T08:45:53.247Z">
+<meta property="og:updated_time" content="2019-01-10T08:51:05.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos单机安装Portal">
-<meta name="twitter:description" content="本篇博客简要介绍了如何在纯净的Centos机器上部署ArcGIS Server、ArcGIS Web Adaptor、ArcGIS DataStore和Portal for ArcGIS。在阅读本篇博客之前，您需要提前了解一些Linux系统的操作，比如使用命令行导航到某个文件夹、使用vi编辑文件等。 1 安装前准备1.1 配置Centos网卡如果在Centos虚拟机上安装Portal，常常用Xsh">
+<meta name="twitter:description" content="本篇博客简要介绍了如何在纯净的Centos机器上部署ArcGIS Server、ArcGIS Web Adaptor、ArcGIS DataStore和Portal for ArcGIS。在阅读本篇博客之前，您需要提前了解一些Linux系统的操作，比如使用命令行导航到某个文件夹、使用vi编辑文件等。 安装前准备配置Centos网卡如果在Centos虚拟机上安装Portal，常常用Xshell +">
 <meta name="twitter:image" content="https://thumbnail0.baidupcs.com/thumbnail/c79a055f0a417341f4f1c60d8ff19fe5?fid=354421848-250528-612570338967173&time=1547100000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-46eePgGIVumWri2TWmqn1jiwj0g%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=222285237307069776&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
 
 
@@ -403,7 +403,7 @@
 
       
         <p>本篇博客简要介绍了如何在纯净的Centos机器上部署ArcGIS Server、ArcGIS Web Adaptor、ArcGIS DataStore和Portal for ArcGIS。在阅读本篇博客之前，您需要提前了解一些Linux系统的操作，比如使用命令行导航到某个文件夹、使用vi编辑文件等。</p>
-<h2 id="1-安装前准备"><a href="#1-安装前准备" class="headerlink" title="1 安装前准备"></a>1 安装前准备</h2><h3 id="1-1-配置Centos网卡"><a href="#1-1-配置Centos网卡" class="headerlink" title="1.1 配置Centos网卡"></a>1.1 配置Centos网卡</h3><p>如果在Centos虚拟机上安装Portal，常常用Xshell + Xftp组合工具进行安装。如果要使用Xshell连接虚拟机，需要确保Centos机器的网卡能正常访问，可通过命令<code>ip addr</code>查看Centos的IP地址。</p>
+<h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><h3 id="配置Centos网卡"><a href="#配置Centos网卡" class="headerlink" title="配置Centos网卡"></a>配置Centos网卡</h3><p>如果在Centos虚拟机上安装Portal，常常用Xshell + Xftp组合工具进行安装。如果要使用Xshell连接虚拟机，需要确保Centos机器的网卡能正常访问，可通过命令<code>ip addr</code>查看Centos的IP地址。</p>
 <p>如果Centos的IP地址能够访问，会得到下图的结果，可跳过此小节；反之，需要配置Centos的网卡。</p>
 <p><img src="https://thumbnail0.baidupcs.com/thumbnail/c79a055f0a417341f4f1c60d8ff19fe5?fid=354421848-250528-612570338967173&amp;time=1547100000&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-46eePgGIVumWri2TWmqn1jiwj0g%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=222285237307069776&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="Centos查看IP地址结果"></p>
 <p>配置Centos网卡流程如下：</p>
@@ -417,15 +417,15 @@
 <li><p>重启成功后，可通过命令<code>ip addr</code>查看Centos的IP地址</p>
 </li>
 </ul>
-<h3 id="1-2-修改主机名"><a href="#1-2-修改主机名" class="headerlink" title="1.2 修改主机名"></a>1.2 修改主机名</h3><p>通过命令<code>vi /etc/hostname</code>编辑hostname文件，修改主机名。然后，保存，退出，重启机器。重启后，可通过命令<code>cat /etc/hostname</code>查看主机名是否修改成功。</p>
-<h3 id="1-3-修改hosts文件"><a href="#1-3-修改hosts文件" class="headerlink" title="1.3 修改hosts文件"></a>1.3 修改hosts文件</h3><p>使用命令<code>vi /etc/hosts</code>打开hosts文件，然后在文件的最后添加本机IP和本机的机器名，如<code>10.10.10.208 pmt01.esri.local</code>。</p>
-<h3 id="1-4-添加ArcGIS用户"><a href="#1-4-添加ArcGIS用户" class="headerlink" title="1.4 添加ArcGIS用户"></a>1.4 添加ArcGIS用户</h3><p>使用命令<code>useradd arcgis</code>添加名为arcgis的用户，然后使用命令<code>passwd arcgis</code>为arcgis用户设置密码。</p>
-<h3 id="1-5-修改句柄"><a href="#1-5-修改句柄" class="headerlink" title="1.5 修改句柄"></a>1.5 修改句柄</h3><p>在root账户下，通过命令<code>vi /etc/security/limits.conf</code>打开limits.conf，在此文件的末尾添加如下内容：</p>
+<h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><p>通过命令<code>vi /etc/hostname</code>编辑hostname文件，修改主机名。然后，保存，退出，重启机器。重启后，可通过命令<code>cat /etc/hostname</code>查看主机名是否修改成功。</p>
+<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>使用命令<code>vi /etc/hosts</code>打开hosts文件，然后在文件的最后添加本机IP和本机的机器名，如<code>10.10.10.208 pmt01.esri.local</code>。</p>
+<h3 id="添加ArcGIS用户"><a href="#添加ArcGIS用户" class="headerlink" title="添加ArcGIS用户"></a>添加ArcGIS用户</h3><p>使用命令<code>useradd arcgis</code>添加名为arcgis的用户，然后使用命令<code>passwd arcgis</code>为arcgis用户设置密码。</p>
+<h3 id="修改句柄"><a href="#修改句柄" class="headerlink" title="修改句柄"></a>修改句柄</h3><p>在root账户下，通过命令<code>vi /etc/security/limits.conf</code>打开limits.conf，在此文件的末尾添加如下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arcgis soft nofile 65536</span><br><span class="line">arcgis hard nofile 65536</span><br><span class="line">arcgis soft nproc 25059</span><br><span class="line">arcgis hard nproc 25059</span><br></pre></td></tr></table></figure>
 <p>保存，退出，然后切换到arcgis用户，使用如下命令查看此配置是否成功。</p>
 <p><img src="https://thumbnail0.baidupcs.com/thumbnail/7570cc9821e4993b0e608efbf9bf4695?fid=354421848-250528-713581496542146&amp;time=1547100000&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-UOb48ZxRt6L665jYsFQ6LPfSNJc%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=222520869842238556&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="查看句柄是否修改成功"></p>
-<h3 id="1-6-关闭防火墙"><a href="#1-6-关闭防火墙" class="headerlink" title="1.6 关闭防火墙"></a>1.6 关闭防火墙</h3><p>使用命令<code>systemctl stop firewalld</code>关闭防火墙，然后使用命令<code>systemctl disable firewalld</code>禁止防火墙开机启动。</p>
-<h2 id="2-安装并配置Java环境"><a href="#2-安装并配置Java环境" class="headerlink" title="2 安装并配置Java环境"></a>2 安装并配置Java环境</h2><p>Centos系统中安装并配置Java环境很方便，可通过以下步骤完成：</p>
+<h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>使用命令<code>systemctl stop firewalld</code>关闭防火墙，然后使用命令<code>systemctl disable firewalld</code>禁止防火墙开机启动。</p>
+<h2 id="安装并配置Java环境"><a href="#安装并配置Java环境" class="headerlink" title="安装并配置Java环境"></a>安装并配置Java环境</h2><p>Centos系统中安装并配置Java环境很方便，可通过以下步骤完成：</p>
 <ul>
 <li><p>通过Xftp工具将JDK的安装包传输到Centos系统中，然后使用命令<code>tar -xzvf jdk-8u191-linux-x64.tar.gz</code>解压</p>
 </li>
@@ -438,7 +438,7 @@
 <ul>
 <li>使用命令<code>java -version</code>判断Java环境是否生效，如果显示Java的版本，则表示Java的环境配置成功。</li>
 </ul>
-<h2 id="3-安装并配置Tomcat环境"><a href="#3-安装并配置Tomcat环境" class="headerlink" title="3 安装并配置Tomcat环境"></a>3 安装并配置Tomcat环境</h2><p>Centos系统中安装、配置Tomcat环境也比较方便，可通过以下步骤完成：</p>
+<h2 id="安装并配置Tomcat环境"><a href="#安装并配置Tomcat环境" class="headerlink" title="安装并配置Tomcat环境"></a>安装并配置Tomcat环境</h2><p>Centos系统中安装、配置Tomcat环境也比较方便，可通过以下步骤完成：</p>
 <ul>
 <li><p>通过Xftp工具将Tomcat的安装包传输到Centos系统中，使用命令<code>tar -xzvf apache-tomcat-9.0.14.tar.gz</code>解压tomcat压缩包</p>
 </li>
@@ -458,7 +458,7 @@
 <li><p>使用命令<code>systemctl start tomcat</code>启动tomcat服务；使用命令<code>systemctl stop tomcat</code>停止tomcat服务</p>
 </li>
 </ul>
-<h2 id="4-配置HTTPS服务"><a href="#4-配置HTTPS服务" class="headerlink" title="4 配置HTTPS服务"></a>4 配置HTTPS服务</h2><ul>
+<h2 id="配置HTTPS服务"><a href="#配置HTTPS服务" class="headerlink" title="配置HTTPS服务"></a>配置HTTPS服务</h2><ul>
 <li>在root账号下，使用命令<code>keytool -genkey -alias tomcat -keyalg RSA -validity 36500 -keystore /usr/local/apache-tomcat-9.0.14/tomcat.keystore -keysize 2048</code>创建证书，配置如下:</li>
 </ul>
 <p><img src="https://thumbnail0.baidupcs.com/thumbnail/a9cd89b90c6e54f6e9e46b1b6f74b6c0?fid=354421848-250528-280087046436639&amp;time=1547100000&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-fsK%2FKGPbuhGuFnen6JQbxqker3w%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=222980862264898358&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="创建证书时的配置"></p>
@@ -469,7 +469,7 @@
 <ul>
 <li>重启tomcat服务，然后在浏览器中可使用https+ip地址访问</li>
 </ul>
-<h2 id="5-安装ArcGIS-WebAdaptor"><a href="#5-安装ArcGIS-WebAdaptor" class="headerlink" title="5 安装ArcGIS WebAdaptor"></a>5 安装ArcGIS WebAdaptor</h2><ul>
+<h2 id="安装ArcGIS-WebAdaptor"><a href="#安装ArcGIS-WebAdaptor" class="headerlink" title="安装ArcGIS WebAdaptor"></a>安装ArcGIS WebAdaptor</h2><ul>
 <li><p>将ArcGIS WebAdaptor安装包拷贝到arcgis用户可访问的文件夹中，例如/home/arcgis，也可以使用命令<code>chown -R arcgis /gis</code>将给arcgis账户赋予gis文件夹的读写权限</p>
 </li>
 <li><p>切换到arcgis账户，使用命令<code>tar -xzvf Web_Adaptor_Java_Linux_1061_9226.tar.gz</code>解压WebAdaptor安装包</p>
@@ -479,7 +479,7 @@
 <li><p>切换到root账户，使用命令<code>cp /home/arcgis/webadaptor10.6.1/java/arcgis.war /usr/local/apache-tomcat-9.0.14/webapps/</code>，将arcgis.war包拷贝到tomcat的webapp文件夹中</p>
 </li>
 </ul>
-<h2 id="6-安装并配置ArcGIS-Server"><a href="#6-安装并配置ArcGIS-Server" class="headerlink" title="6 安装并配置ArcGIS Server"></a>6 安装并配置ArcGIS Server</h2><h3 id="6-1-安装ArcGIS-Server"><a href="#6-1-安装ArcGIS-Server" class="headerlink" title="6.1 安装ArcGIS Server"></a>6.1 安装ArcGIS Server</h3><ul>
+<h2 id="安装并配置ArcGIS-Server"><a href="#安装并配置ArcGIS-Server" class="headerlink" title="安装并配置ArcGIS Server"></a>安装并配置ArcGIS Server</h2><h3 id="安装ArcGIS-Server"><a href="#安装ArcGIS-Server" class="headerlink" title="安装ArcGIS Server"></a>安装ArcGIS Server</h3><ul>
 <li><p>切换到arcgis账户，然后使用命令<code>tar -xzvf ArcGIS_Server_Linux_1061_9226.tar.gz</code>解压ArcGIS Server安装包</p>
 </li>
 <li><p>导航至Server解压后的文件夹，使用命令<code>./Setup -m silent -l yes -a *.ecp</code>安装ArcGIS Server</p>
@@ -487,25 +487,25 @@
 <li><p>安装成功，在浏览器访问ArcGIS Manager页面，创建用户</p>
 </li>
 </ul>
-<h3 id="6-2-WebAdaptor注册Server"><a href="#6-2-WebAdaptor注册Server" class="headerlink" title="6.2 WebAdaptor注册Server"></a>6.2 WebAdaptor注册Server</h3><ul>
+<h3 id="WebAdaptor注册Server"><a href="#WebAdaptor注册Server" class="headerlink" title="WebAdaptor注册Server"></a>WebAdaptor注册Server</h3><ul>
 <li><p>使用命令<code>cd /home/arcgis/webadaptor10.6.1/java/tools/</code>导航到WebAdaptor文件夹</p>
 </li>
 <li><p>使用命令<code>./configurewebadaptor.sh -m server -w https://pmt02.esri.local/arcgis/webadaptor -g https://pmt02.esri.local:6443 -u siteadmin -p admin -a true</code>注册Server</p>
 </li>
 </ul>
-<h3 id="6-3-配置ArcGIS-Server开机自启动"><a href="#6-3-配置ArcGIS-Server开机自启动" class="headerlink" title="6.3 配置ArcGIS Server开机自启动"></a>6.3 配置ArcGIS Server开机自启动</h3><ul>
+<h3 id="配置ArcGIS-Server开机自启动"><a href="#配置ArcGIS-Server开机自启动" class="headerlink" title="配置ArcGIS Server开机自启动"></a>配置ArcGIS Server开机自启动</h3><ul>
 <li><p>切换到root账号，使用命令<code>cp /home/arcgis/server/framework/etc/scripts/arcgisserver.service /etc/systemd/system</code>将arcgisserver.service复制到system文件夹下</p>
 </li>
 <li><p>导航到system文件夹，使用命令<code>systemctl enable arcgisserver.service</code>配置ArcGIS Server开机自启动</p>
 </li>
 </ul>
-<h2 id="7-安装并配置ArcGIS-DataStore"><a href="#7-安装并配置ArcGIS-DataStore" class="headerlink" title="7 安装并配置ArcGIS DataStore"></a>7 安装并配置ArcGIS DataStore</h2><h3 id="7-1-安装ArcGIS-DataStore"><a href="#7-1-安装ArcGIS-DataStore" class="headerlink" title="7.1 安装ArcGIS DataStore"></a>7.1 安装ArcGIS DataStore</h3><ul>
+<h2 id="安装并配置ArcGIS-DataStore"><a href="#安装并配置ArcGIS-DataStore" class="headerlink" title="安装并配置ArcGIS DataStore"></a>安装并配置ArcGIS DataStore</h2><h3 id="安装ArcGIS-DataStore"><a href="#安装ArcGIS-DataStore" class="headerlink" title="安装ArcGIS DataStore"></a>安装ArcGIS DataStore</h3><ul>
 <li><p>切换到arcgis账户，然后使用命令<code>tar -xzvf ArcGIS_DataStore_Linux_1061_9226.tar.gz</code>解压ArcGIS DataStore安装包</p>
 </li>
 <li><p>导航至DataStore解压后的文件夹，使用命令<code>./Setup -m silent -l yes</code>安装ArcGIS DataStore</p>
 </li>
 </ul>
-<h3 id="7-2-DataStore注册Server"><a href="#7-2-DataStore注册Server" class="headerlink" title="7.2 DataStore注册Server"></a>7.2 DataStore注册Server</h3><ul>
+<h3 id="DataStore注册Server"><a href="#DataStore注册Server" class="headerlink" title="DataStore注册Server"></a>DataStore注册Server</h3><ul>
 <li><p>使用命令<code>cd /home/arcgis/arcgis/datastore/tools/</code>进入tools文件夹</p>
 </li>
 <li><p>使用命令<code>./configuredatastore.sh https://pmt02.esri.local:6443/arcgis/admin siteadmin admin /home/arcgis/arcgis/datastore/usr/ --stores relational</code>注册关系DataStore</p>
@@ -513,13 +513,13 @@
 <li><p>使用命令<code>./configuredatastore.sh https://pmt01.esri.local:6443/arcgis/admin siteadmin admin /home/arcgis/arcgis/datastore/usr/ --stores spatiotemporal</code>注册时空DataStore</p>
 </li>
 </ul>
-<h3 id="7-3-配置ArcGIS-DataStore开机自启动"><a href="#7-3-配置ArcGIS-DataStore开机自启动" class="headerlink" title="7.3 配置ArcGIS DataStore开机自启动"></a>7.3 配置ArcGIS DataStore开机自启动</h3><ul>
+<h3 id="配置ArcGIS-DataStore开机自启动"><a href="#配置ArcGIS-DataStore开机自启动" class="headerlink" title="配置ArcGIS DataStore开机自启动"></a>配置ArcGIS DataStore开机自启动</h3><ul>
 <li><p>切换到root账号，使用命令<code>cp /home/arcgis/arcgis/datastore/framework/etc/scripts/arcgisdatastore.service /etc/systemd/system</code>复制到system文件夹下</p>
 </li>
 <li><p>导航至system文件夹，使用命令<code>systemctl enable arcgisdatastore.service</code>配置ArcGIS Server开机自启动</p>
 </li>
 </ul>
-<h2 id="8-安装并配置Portal-for-ArcGIS"><a href="#8-安装并配置Portal-for-ArcGIS" class="headerlink" title="8 安装并配置Portal for ArcGIS"></a>8 安装并配置Portal for ArcGIS</h2><h3 id="8-1-安装Portal-for-ArcGIS"><a href="#8-1-安装Portal-for-ArcGIS" class="headerlink" title="8.1 安装Portal for ArcGIS"></a>8.1 安装Portal for ArcGIS</h3><ul>
+<h2 id="安装并配置Portal-for-ArcGIS"><a href="#安装并配置Portal-for-ArcGIS" class="headerlink" title="安装并配置Portal for ArcGIS"></a>安装并配置Portal for ArcGIS</h2><h3 id="安装Portal-for-ArcGIS"><a href="#安装Portal-for-ArcGIS" class="headerlink" title="安装Portal for ArcGIS"></a>安装Portal for ArcGIS</h3><ul>
 <li><p>切换到arcgis账号，然后使用命令<code>tar -xzvf Portal_for_ArcGIS_Linux_1061_9226.tar.gz</code>解压Portal安装包</p>
 </li>
 <li><p>导航至Portal解压后的文件夹，然后使用命令<code>./Setup -m silent -l yes -a /gis/PortalforArcGIS.ecp</code>安装Portal</p>
@@ -527,22 +527,22 @@
 <li><p>使用命令<code>cd /home/arcgis/arcgis/portal/tools/createportal</code>切换到Portal的createportal文件夹，然后使用命令<code>./createportal.sh -fn XN -ln Jiao -u esri02 -p 12345678 -e *@qq.com -qi 1 -qa xingtai -d /home/arcgis/arcgis/portal/usr/arcgisportal/content/</code>创建Portal账户</p>
 </li>
 </ul>
-<h3 id="8-2-WebAdaptor注册Portal"><a href="#8-2-WebAdaptor注册Portal" class="headerlink" title="8.2 WebAdaptor注册Portal"></a>8.2 WebAdaptor注册Portal</h3><ul>
+<h3 id="WebAdaptor注册Portal"><a href="#WebAdaptor注册Portal" class="headerlink" title="WebAdaptor注册Portal"></a>WebAdaptor注册Portal</h3><ul>
 <li><p>使用命令<code>cd /home/arcgis/webadaptor10.6.1/java/tools/</code>导航到WebAdaptor文件夹</p>
 </li>
 <li><p>输入命令<br><code>./configurewebadaptor.sh -m portal -w https://pmt02.esri.local/arcgis/webadaptor -g https://pmt02.esri.local:7443 -u esri01 -p 12345678</code>为WebAdaptor注册Portal</p>
 </li>
 </ul>
-<h3 id="8-3-Portal联合、托管Server"><a href="#8-3-Portal联合、托管Server" class="headerlink" title="8.3 Portal联合、托管Server"></a>8.3 Portal联合、托管Server</h3><p>使用浏览器访问Portal，登录成功后，依次点击<em>Organization</em>、<em>EDIT</em> <em>SETTINGS</em>、<em>Servers</em>打开Server配置界面，然后点击<em>ADD SERVER</em>，然后按照提示依次输入如下的配置内容</p>
+<h3 id="Portal联合、托管Server"><a href="#Portal联合、托管Server" class="headerlink" title="Portal联合、托管Server"></a>Portal联合、托管Server</h3><p>使用浏览器访问Portal，登录成功后，依次点击<em>Organization</em>、<em>EDIT</em> <em>SETTINGS</em>、<em>Servers</em>打开Server配置界面，然后点击<em>ADD SERVER</em>，然后按照提示依次输入如下的配置内容</p>
 <p><img src="https://thumbnail0.baidupcs.com/thumbnail/6d3bf44039ab1b657c3a92908e67b98e?fid=354421848-250528-535068382982394&amp;time=1547107200&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-wsj95btmXea%2FZp%2FrKc1ipwQ99VE%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=224363756639404276&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="Portal联合Server"></p>
 <p>在Server配置界面中，在Hosting Server配置中，选择刚刚添加的ArcGIS Server服务器，然后点击SAVE，保存配置。</p>
-<h3 id="8-4-配置Portal开机自启动"><a href="#8-4-配置Portal开机自启动" class="headerlink" title="8.4 配置Portal开机自启动"></a>8.4 配置Portal开机自启动</h3><ul>
+<h3 id="配置Portal开机自启动"><a href="#配置Portal开机自启动" class="headerlink" title="配置Portal开机自启动"></a>配置Portal开机自启动</h3><ul>
 <li><p>切换到root账号，使用命令<code>cp /home/arcgis/arcgis/portal/framework/etc/arcgisportal.service /etc/systemd/system</code>复制到system文件夹下</p>
 </li>
 <li><p>导航至system文件夹，使用命令<code>systemctl enable arcgisportal.service</code>配置Portal开机自启动</p>
 </li>
 </ul>
-<h2 id="9-参考信息"><a href="#9-参考信息" class="headerlink" title="9 参考信息"></a>9 参考信息</h2><ul>
+<h2 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h2><ul>
 <li><p><a href="https://enterprise.arcgis.com/zh-cn/portal/latest/install/linux/welcome-to-the-portal-for-arcgis-installation-guide.htm" target="_blank" rel="noopener">Portal官方安装教程</a></p>
 </li>
 <li><p><a href="https://enterprise.arcgis.com/zh-cn/server/latest/install/linux/welcome-to-the-arcgis-for-server-install-guide.htm" target="_blank" rel="noopener">Server官方安装教程</a></p>
@@ -607,10 +607,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/Centos单击安装Portal for ArcGIS/" rel="prev" title="Centos单机安装Portal">
-                Centos单机安装Portal <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -692,7 +688,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -788,7 +784,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装前准备"><span class="nav-number">1.</span> <span class="nav-text">1 安装前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-配置Centos网卡"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 配置Centos网卡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-修改主机名"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 修改主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-修改hosts文件"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 修改hosts文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-添加ArcGIS用户"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 添加ArcGIS用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-修改句柄"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 修改句柄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-关闭防火墙"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 关闭防火墙</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装并配置Java环境"><span class="nav-number">2.</span> <span class="nav-text">2 安装并配置Java环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装并配置Tomcat环境"><span class="nav-number">3.</span> <span class="nav-text">3 安装并配置Tomcat环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置HTTPS服务"><span class="nav-number">4.</span> <span class="nav-text">4 配置HTTPS服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-安装ArcGIS-WebAdaptor"><span class="nav-number">5.</span> <span class="nav-text">5 安装ArcGIS WebAdaptor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-安装并配置ArcGIS-Server"><span class="nav-number">6.</span> <span class="nav-text">6 安装并配置ArcGIS Server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-安装ArcGIS-Server"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 安装ArcGIS Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-WebAdaptor注册Server"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 WebAdaptor注册Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-配置ArcGIS-Server开机自启动"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 配置ArcGIS Server开机自启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-安装并配置ArcGIS-DataStore"><span class="nav-number">7.</span> <span class="nav-text">7 安装并配置ArcGIS DataStore</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-安装ArcGIS-DataStore"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 安装ArcGIS DataStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-DataStore注册Server"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 DataStore注册Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-配置ArcGIS-DataStore开机自启动"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 配置ArcGIS DataStore开机自启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-安装并配置Portal-for-ArcGIS"><span class="nav-number">8.</span> <span class="nav-text">8 安装并配置Portal for ArcGIS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-安装Portal-for-ArcGIS"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 安装Portal for ArcGIS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-WebAdaptor注册Portal"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 WebAdaptor注册Portal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-Portal联合、托管Server"><span class="nav-number">8.3.</span> <span class="nav-text">8.3 Portal联合、托管Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-4-配置Portal开机自启动"><span class="nav-number">8.4.</span> <span class="nav-text">8.4 配置Portal开机自启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-参考信息"><span class="nav-number">9.</span> <span class="nav-text">9 参考信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装前准备"><span class="nav-number">1.</span> <span class="nav-text">安装前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Centos网卡"><span class="nav-number">1.1.</span> <span class="nav-text">配置Centos网卡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主机名"><span class="nav-number">1.2.</span> <span class="nav-text">修改主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改hosts文件"><span class="nav-number">1.3.</span> <span class="nav-text">修改hosts文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加ArcGIS用户"><span class="nav-number">1.4.</span> <span class="nav-text">添加ArcGIS用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改句柄"><span class="nav-number">1.5.</span> <span class="nav-text">修改句柄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭防火墙"><span class="nav-number">1.6.</span> <span class="nav-text">关闭防火墙</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装并配置Java环境"><span class="nav-number">2.</span> <span class="nav-text">安装并配置Java环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装并配置Tomcat环境"><span class="nav-number">3.</span> <span class="nav-text">安装并配置Tomcat环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置HTTPS服务"><span class="nav-number">4.</span> <span class="nav-text">配置HTTPS服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装ArcGIS-WebAdaptor"><span class="nav-number">5.</span> <span class="nav-text">安装ArcGIS WebAdaptor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装并配置ArcGIS-Server"><span class="nav-number">6.</span> <span class="nav-text">安装并配置ArcGIS Server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ArcGIS-Server"><span class="nav-number">6.1.</span> <span class="nav-text">安装ArcGIS Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebAdaptor注册Server"><span class="nav-number">6.2.</span> <span class="nav-text">WebAdaptor注册Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置ArcGIS-Server开机自启动"><span class="nav-number">6.3.</span> <span class="nav-text">配置ArcGIS Server开机自启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装并配置ArcGIS-DataStore"><span class="nav-number">7.</span> <span class="nav-text">安装并配置ArcGIS DataStore</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ArcGIS-DataStore"><span class="nav-number">7.1.</span> <span class="nav-text">安装ArcGIS DataStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataStore注册Server"><span class="nav-number">7.2.</span> <span class="nav-text">DataStore注册Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置ArcGIS-DataStore开机自启动"><span class="nav-number">7.3.</span> <span class="nav-text">配置ArcGIS DataStore开机自启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装并配置Portal-for-ArcGIS"><span class="nav-number">8.</span> <span class="nav-text">安装并配置Portal for ArcGIS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Portal-for-ArcGIS"><span class="nav-number">8.1.</span> <span class="nav-text">安装Portal for ArcGIS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebAdaptor注册Portal"><span class="nav-number">8.2.</span> <span class="nav-text">WebAdaptor注册Portal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Portal联合、托管Server"><span class="nav-number">8.3.</span> <span class="nav-text">Portal联合、托管Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Portal开机自启动"><span class="nav-number">8.4.</span> <span class="nav-text">配置Portal开机自启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考信息"><span class="nav-number">9.</span> <span class="nav-text">参考信息</span></a></li></ol></div>
             
 
           </div>
@@ -822,7 +818,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.4k</span>
+    <span title="Site words total count">9.5k</span>
   
 </div>
 
