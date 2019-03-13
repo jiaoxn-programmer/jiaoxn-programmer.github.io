@@ -104,16 +104,16 @@
 <meta property="og:site_name" content="阿焦的博客">
 <meta property="og:description" content="在Windows服务器上部署Python脚本时，有时希望每隔一段时间运行一次脚本（如爬虫类程序），有时希望脚本一致运行（如Flask类的应用），对于这类的问题，可通过设置任务计划程序来实现。 以Windows Server 2016操作系统为例，介绍如何配置任务计划程序每隔1小时运行一次Python脚本： 打开任务计划窗口在搜索Windows窗口中，搜索任务计划程序，打开该窗口  创建并配置任务创">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/35d9a5d16d29717da428b4f1060cb8ea?fid=354421848-250528-419673221458495&time=1546041600&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-b2ZEdvR3QnjpHyYuEMSvBGqhE7M%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8404496636172080798&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/731a77996265cc1d07b29e3149f9375f?fid=354421848-250528-932888312553740&time=1546045200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-4BLYc0daEeqFza375sYmNzr3m8M%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8404550283511725506&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/7634452e53672bbcd3ef22547cc3b9e9?fid=354421848-250528-324219095744525&time=1546045200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-GVRkz0gMACOeKDE6UX7HgC1ON18%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8404517049847081482&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/c733a29ac74cc0915c0f918cacaf2597?fid=354421848-250528-918010948989115&time=1546045200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-vQOrEPm0j1ZJT5mT%2FOt0OD6IWTw%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8404531933098245039&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/8a29cbadc2c85c4d9a9a48547a3eb2fa?fid=354421848-250528-400293779901983&time=1546045200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-%2Bh3L%2FxGc0ndWSZbh%2Bnfr2q4vY%2B8%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8404563243638753016&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:updated_time" content="2018-12-29T01:04:31.155Z">
+<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/任务计划程序主窗口.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/创建基本任务.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/配置任务触发器.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/配置任务操作.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/手动启动任务.png">
+<meta property="og:updated_time" content="2019-03-13T01:56:30.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows系统下定时执行Python程序">
 <meta name="twitter:description" content="在Windows服务器上部署Python脚本时，有时希望每隔一段时间运行一次脚本（如爬虫类程序），有时希望脚本一致运行（如Flask类的应用），对于这类的问题，可通过设置任务计划程序来实现。 以Windows Server 2016操作系统为例，介绍如何配置任务计划程序每隔1小时运行一次Python脚本： 打开任务计划窗口在搜索Windows窗口中，搜索任务计划程序，打开该窗口  创建并配置任务创">
-<meta name="twitter:image" content="https://thumbnail0.baidupcs.com/thumbnail/35d9a5d16d29717da428b4f1060cb8ea?fid=354421848-250528-419673221458495&time=1546041600&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-b2ZEdvR3QnjpHyYuEMSvBGqhE7M%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8404496636172080798&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/任务计划程序主窗口.png">
 
 
 
@@ -404,17 +404,17 @@
         <p>在Windows服务器上部署Python脚本时，有时希望每隔一段时间运行一次脚本（如爬虫类程序），有时希望脚本一致运行（如Flask类的应用），对于这类的问题，可通过设置任务计划程序来实现。</p>
 <p>以Windows Server 2016操作系统为例，介绍如何配置任务计划程序每隔1小时运行一次Python脚本：</p>
 <h2 id="打开任务计划窗口"><a href="#打开任务计划窗口" class="headerlink" title="打开任务计划窗口"></a>打开任务计划窗口</h2><p>在搜索Windows窗口中，搜索任务计划程序，打开该窗口</p>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/35d9a5d16d29717da428b4f1060cb8ea?fid=354421848-250528-419673221458495&amp;time=1546041600&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-b2ZEdvR3QnjpHyYuEMSvBGqhE7M%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=8404496636172080798&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="images"></p>
+<p><img src="/2018/12/Windows系统下定时执行Python程序/任务计划程序主窗口.png" alt="任务计划程序主窗口"></p>
 <h2 id="创建并配置任务"><a href="#创建并配置任务" class="headerlink" title="创建并配置任务"></a>创建并配置任务</h2><h3 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h3><p>点击窗口右上角的创建任务按钮，打开任务向导窗口，然后在该窗口的常规选项卡中设置任务名称和任务描述，其余配置可以默认</p>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/731a77996265cc1d07b29e3149f9375f?fid=354421848-250528-932888312553740&amp;time=1546045200&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-4BLYc0daEeqFza375sYmNzr3m8M%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=8404550283511725506&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="images"></p>
+<p><img src="/2018/12/Windows系统下定时执行Python程序/创建基本任务.png" alt="任务计划程序主窗口"></p>
 <h3 id="配置任务触发器"><a href="#配置任务触发器" class="headerlink" title="配置任务触发器"></a>配置任务触发器</h3><p>点击触发器选项卡，然后点击新建按钮，设置触发任务执行的时间。这里选择“一次”并配置任务执行的时间。如果设置的时间为2018/12/28 10:05:00，则程序只会在2018/12/28 10:05:00启动一次，当然也可以手动启动此程序。然后，勾选重复任务间隔，设置时间为1小时，持续时间为无限期。其余配置保持默认即可。这样配置后，此程序会在每个小时的5分启动，任务执行完成后，程序自动结束。点击确定返回任务配置界面。</p>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/7634452e53672bbcd3ef22547cc3b9e9?fid=354421848-250528-324219095744525&amp;time=1546045200&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-GVRkz0gMACOeKDE6UX7HgC1ON18%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=8404517049847081482&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="images"></p>
+<p><img src="/2018/12/Windows系统下定时执行Python程序/配置任务触发器.png" alt="任务计划程序主窗口"></p>
 <h3 id="配置任务操作"><a href="#配置任务操作" class="headerlink" title="配置任务操作"></a>配置任务操作</h3><p>点击操作选项卡，然后点击新建按钮，设置任务执行的操作。这里选择“启动程序”，因为要执行Python脚本并且Python脚本执行时不打算显示命令行窗口，选择程序为pythow.exe，可通过点击浏览定位到此文件，例如：C:\Users\Administrator\AppData\Local\Programs\Python\Python36\pythonw.exe；参数为要执行的.py文件名称，例如：main.py；起始于选择.py文件所在的文件夹路径，如：C:\Users\Administrator\Desktop。</p>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/c733a29ac74cc0915c0f918cacaf2597?fid=354421848-250528-918010948989115&amp;time=1546045200&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-vQOrEPm0j1ZJT5mT%2FOt0OD6IWTw%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=8404531933098245039&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="images"></p>
+<p><img src="/2018/12/Windows系统下定时执行Python程序/配置任务操作.png" alt="任务计划程序主窗口"></p>
 <h3 id="配置任务条件"><a href="#配置任务条件" class="headerlink" title="配置任务条件"></a>配置任务条件</h3><p>可根据自己的应用情况配置，基本上保持默认配置即可。</p>
 <h3 id="配置任务设置"><a href="#配置任务设置" class="headerlink" title="配置任务设置"></a>配置任务设置</h3><p>可根据自己的应用情况配置，基本上保持默认配置即可。</p>
 <h2 id="启动任务"><a href="#启动任务" class="headerlink" title="启动任务"></a>启动任务</h2><p>配置任务后，可手动启动任务。首先，在任务列表中选中任务，然后点击窗口右侧的运行按钮即可执行此任务。</p>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/8a29cbadc2c85c4d9a9a48547a3eb2fa?fid=354421848-250528-400293779901983&amp;time=1546045200&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-%2Bh3L%2FxGc0ndWSZbh%2Bnfr2q4vY%2B8%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=8404563243638753016&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="images"></p>
+<p><img src="/2018/12/Windows系统下定时执行Python程序/手动启动任务.png" alt="任务计划程序主窗口"></p>
 
       
     </div>
@@ -459,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/Centos使用Nginx+Supervisor离线部署Flask应用/" rel="next" title="Centos使用Nginx+Supervisor离线部署Flask应用">
-                <i class="fa fa-chevron-left"></i> Centos使用Nginx+Supervisor离线部署Flask应用
+              <a href="/2018/12/Centos离线安装Python/" rel="next" title="Centos离线安装Python">
+                <i class="fa fa-chevron-left"></i> Centos离线安装Python
               </a>
             
           </div>
@@ -683,7 +683,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.5k</span>
+    <span title="Site words total count">9.9k</span>
   
 </div>
 
