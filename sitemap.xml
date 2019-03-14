@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/03/%E5%9F%BA%E4%BA%8EREST%E7%9A%84%E6%96%B9%E5%BC%8F%E4%B8%8B%E8%BD%BDPortal%E4%B8%AD%E7%9A%84%E8%A6%81%E7%B4%A0%E6%9C%8D%E5%8A%A1/</loc>
+    
+    <lastmod>2019-03-14T02:36:16.971Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/03/%E5%9F%BA%E4%BA%8EREST%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BF%E9%97%AEPortal%E7%9A%84GA%E5%B7%A5%E5%85%B7/</loc>
     
     <lastmod>2019-03-13T09:54:23.536Z</lastmod>
@@ -82,27 +89,6 @@
     <loc>http://yoursite.com/2019/01/Centos%E5%8D%95%E6%9C%BA%E5%AE%89%E8%A3%85PortalForArcGIS/</loc>
     
     <lastmod>2019-03-13T02:29:21.252Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/03/Vuex%E6%A8%A1%E5%9D%97%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%95%B4%E7%90%862/</loc>
-    
-    <lastmod>2019-03-13T02:26:29.577Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/03/%E5%9F%BA%E4%BA%8EREST%E7%9A%84%E6%96%B9%E5%BC%8F%E4%B8%8B%E8%BD%BDPortal%E4%B8%AD%E7%9A%84%E8%A6%81%E7%B4%A0%E6%9C%8D%E5%8A%A1/</loc>
-    
-    <lastmod>2019-03-13T02:25:07.579Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/03/Vuex%E6%A8%A1%E5%9D%97%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%95%B4%E7%90%861/</loc>
-    
-    <lastmod>2019-03-13T02:23:04.801Z</lastmod>
     
   </url>
   

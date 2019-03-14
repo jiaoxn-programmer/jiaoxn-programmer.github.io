@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Portal,Shapefile," />
 
 
 
@@ -96,17 +96,21 @@
 
 
 
-<meta name="description" content="阿焦">
+<meta name="description" content="Portal中下载要素服务的流程正像之前的博客中谈到的，要素服务在Portal中有两种存储方式，一种是存储到时空型数据库中，一种是存储到关系型数据库中。两种存储方式的不同，导致了下载流程的不一样。  从关系型数据库中下载  在要素服务的面板中右侧，点击Export Data，可以看到可以将要素服务导出成Shapefile、CSV File、Excel、FGDB等格式的文件，这里以Shapefile">
+<meta name="keywords" content="Portal,Shapefile">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于REST的方式下载Portal中的要素服务">
 <meta property="og:url" content="http://yoursite.com/2019/03/基于REST的方式下载Portal中的要素服务/index.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="阿焦">
+<meta property="og:description" content="Portal中下载要素服务的流程正像之前的博客中谈到的，要素服务在Portal中有两种存储方式，一种是存储到时空型数据库中，一种是存储到关系型数据库中。两种存储方式的不同，导致了下载流程的不一样。  从关系型数据库中下载  在要素服务的面板中右侧，点击Export Data，可以看到可以将要素服务导出成Shapefile、CSV File、Excel、FGDB等格式的文件，这里以Shapefile">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-13T02:25:07.579Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/基于REST的方式下载Portal中的要素服务/要素导出选项.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/基于REST的方式下载Portal中的要素服务/要素导出成Shapfile参数示例.png">
+<meta property="og:updated_time" content="2019-03-14T02:36:16.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于REST的方式下载Portal中的要素服务">
-<meta name="twitter:description" content="阿焦">
+<meta name="twitter:description" content="Portal中下载要素服务的流程正像之前的博客中谈到的，要素服务在Portal中有两种存储方式，一种是存储到时空型数据库中，一种是存储到关系型数据库中。两种存储方式的不同，导致了下载流程的不一样。  从关系型数据库中下载  在要素服务的面板中右侧，点击Export Data，可以看到可以将要素服务导出成Shapefile、CSV File、Excel、FGDB等格式的文件，这里以Shapefile">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/基于REST的方式下载Portal中的要素服务/要素导出选项.png">
 
 
 
@@ -309,6 +313,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -335,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  943
                 </span>
               
 
@@ -351,7 +377,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -372,7 +398,39 @@
       
 
       
-        
+        <h3 id="Portal中下载要素服务的流程"><a href="#Portal中下载要素服务的流程" class="headerlink" title="Portal中下载要素服务的流程"></a>Portal中下载要素服务的流程</h3><p>正像之前的博客中谈到的，要素服务在Portal中有两种存储方式，一种是存储到时空型数据库中，一种是存储到关系型数据库中。两种存储方式的不同，导致了下载流程的不一样。</p>
+<ul>
+<li>从关系型数据库中下载</li>
+</ul>
+<p>在要素服务的面板中右侧，点击<strong>Export Data</strong>，可以看到可以将要素服务导出成Shapefile、CSV File、Excel、FGDB等格式的文件，这里以Shapefile为例，点击<strong>Export to Shapefile</strong>，在弹出的对话框中设置相应的参数信息，即可完成Shapefile的导出功能。</p>
+<p><img src="/2019/03/基于REST的方式下载Portal中的要素服务/要素导出选项.png" alt="要素导出成Shapfile参数示例"></p>
+<p><img src="/2019/03/基于REST的方式下载Portal中的要素服务/要素导出成Shapfile参数示例.png" alt="要素导出成Shapfile参数示例"></p>
+<p>导出成功后，当前页面会自动刷新，转置Shapefile的页面，在当前的页面中点击Download按钮下载Shapefile文件。</p>
+<ul>
+<li>从时空型数据库中下载</li>
+</ul>
+<p>从时空型数据库中导出要素服务，首先要通过GA的Copy to DataStore工具将要素服务复制到关系型数据库中，然后关系型数据库导出要素服务的流程导出。</p>
+<p>跟踪Portal中导出要素服务的网络请求，可以得到整个流程使用的哪些REST API，接下来将会一一介绍。</p>
+<h3 id="通过REST-API实现要素服务的下载"><a href="#通过REST-API实现要素服务的下载" class="headerlink" title="通过REST API实现要素服务的下载"></a>通过REST API实现要素服务的下载</h3><ul>
+<li>从时空型数据库中下载</li>
+</ul>
+<p>如上所述，首先我们需要做的是调用<a href="https://developers.arcgis.com/rest/services-reference/copy-to-data-store.htm" target="_blank" rel="noopener">Copy to DataStore</a>的REST API将要素导出至关系型数据库中。</p>
+<p>该工具的API使用方式和GA的Overlay工具使用方式类似，请参考我的另外一篇<a href="https://jiaoxn.com.cn/2019/03/%E5%9F%BA%E4%BA%8EREST%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BF%E9%97%AEPortal%E7%9A%84GA%E5%B7%A5%E5%85%B7/#more" target="_blank" rel="noopener">博客</a>，这里就不在赘述了。</p>
+<p>导出成功后的操作流程请参看下一小节。</p>
+<ul>
+<li>从关系型数据库中下载</li>
+</ul>
+<p>在实际应用中我们会常常获取到要素服务的名称，但是Portal中的导出工具是以ItemId为基准的，因此我们提前要根据要素服务的名称查找其对应的ID。</p>
+<p><a href="https://developers.arcgis.com/rest/users-groups-and-items/search.htm" target="_blank" rel="noopener">查找</a>的参数配置及实现代码如下：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let searchParams = &#123;</span><br><span class="line">    countFields: &quot;access, contentstatus, categories&quot;,</span><br><span class="line">    q: that.gaOutputName,</span><br><span class="line">    start: 1,</span><br><span class="line">    num: 10,</span><br><span class="line">    f: &quot;json&quot;,</span><br><span class="line">    countSize: 10,</span><br><span class="line">    token: portalToken</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let searchRequestUrl =</span><br><span class="line">    &quot;https://&quot; +</span><br><span class="line">    Vue.prototype[&quot;portalDomainName&quot;] +</span><br><span class="line">    &quot;/arcgis/sharing/rest/search&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">postRequestOfAxios(</span><br><span class="line">      searchRequestUrl,</span><br><span class="line">      qs.stringify(searchParams),</span><br><span class="line">      function(requestResultInfo) &#123;</span><br><span class="line">        let overlayResultId = requestResultInfo.data.results[0].id;</span><br><span class="line"></span><br><span class="line">        // do export</span><br><span class="line">      &#125;,</span><br><span class="line">      function(requestErrorInfo) &#123;</span><br><span class="line">        failCallBack();</span><br><span class="line"></span><br><span class="line">        console.log(requestErrorInfo);</span><br><span class="line">      &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>接下来呢，就是根据获取到的ID执行要素<a href="https://developers.arcgis.com/rest/users-groups-and-items/export-item.htm" target="_blank" rel="noopener">导出</a>功能。导出的API参数配置及功能实现如下所示。导出成功后，会返回一个相应的JOB ID，需要每个一段时间根据这个JOB ID查看任务状态，直到导出这个状态结束为止。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let exportToShpParams = &#123;</span><br><span class="line">    itemId: overlayResultId,</span><br><span class="line">    exportFormat: &quot;Shapefile&quot;,</span><br><span class="line">    f: &quot;json&quot;,</span><br><span class="line">    token: portalToken</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let exportRequestUrl =</span><br><span class="line">    &quot;https://&quot; +</span><br><span class="line">    Vue.prototype[&quot;portalDomainName&quot;] +</span><br><span class="line">    &quot;/arcgis/sharing/rest/content/users/&quot; +</span><br><span class="line">    Vue.prototype[&quot;portalUserName&quot;] +</span><br><span class="line">    &quot;/export&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">postRequestOfAxios(</span><br><span class="line">    exportRequestUrl,</span><br><span class="line">    qs.stringify(exportToShpParams),</span><br><span class="line">    function(requestResultInfo) &#123;</span><br><span class="line">        let exportShpFileJobId = requestResultInfo.data.jobId;</span><br><span class="line">        let exportShpFileItemId = requestResultInfo.data.exportItemId;</span><br><span class="line"></span><br><span class="line">        // 间隔2秒，查询要素导出的状态。</span><br><span class="line">        let exportStatusWindowsInterval = window.setInterval(function() &#123;</span><br><span class="line">            let exportStatusShpFileJobUrl =</span><br><span class="line">                &quot;https://&quot; +</span><br><span class="line">                Vue.prototype[&quot;portalDomainName&quot;] +</span><br><span class="line">                &quot;/arcgis/sharing/rest/content/users/&quot; +</span><br><span class="line">                Vue.prototype[&quot;portalUserName&quot;] +</span><br><span class="line">                &quot;/items/&quot; +</span><br><span class="line">                exportShpFileItemId +</span><br><span class="line">                &quot;/status&quot;;</span><br><span class="line">        </span><br><span class="line">            let exportShpFileStatusData = &#123;</span><br><span class="line">                jobId: exportShpFileJobId,</span><br><span class="line">                jobType: &quot;export&quot;,</span><br><span class="line">                f: &quot;json&quot;,</span><br><span class="line">                token: portalToken</span><br><span class="line">            &#125;;</span><br><span class="line">    </span><br><span class="line">            postRequestOfAxios(</span><br><span class="line">                exportStatusShpFileJobUrl,</span><br><span class="line">                qs.stringify(exportShpFileStatusData),</span><br><span class="line">                function(requestResultInfo) &#123;</span><br><span class="line">                      if (requestResultInfo.data.status === &quot;completed&quot;) &#123;</span><br><span class="line">                          window.clearInterval(exportStatusWindowsInterval);</span><br><span class="line">                              </span><br><span class="line">                          // do download</span><br><span class="line">                      &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                function(requestErrorInfo) &#123;</span><br><span class="line">                      console.log(requestErrorInfo);</span><br><span class="line">                      </span><br><span class="line">                      window.clearInterval(exportStatusWindowsInterval);\</span><br><span class="line">                &#125;</span><br><span class="line">            );</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;,</span><br><span class="line">    function(requestErrorInfo) &#123;</span><br><span class="line">        failCallBack();</span><br><span class="line">        </span><br><span class="line">        console.log(requestErrorInfo);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>导出成功后，根据导出结果的item id以及Portal的token拼接Shapefile的下载地址，然后使用location.href方法下载Shapefile文件，实现代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location.href =</span><br><span class="line">    &quot;https://&quot; +</span><br><span class="line">    Vue.prototype[&quot;portalDomainName&quot;] +</span><br><span class="line">    &quot;/arcgis/sharing/rest/content/items/&quot; +</span><br><span class="line">    exportShpFileItemId +</span><br><span class="line">    &quot;/data?token=&quot; +</span><br><span class="line">    portalToken;</span><br></pre></td></tr></table></figure>
+<p>至此，我们完成要素服务导出及下载为Shapefile的整个流程，感兴趣的朋友可以试试将要素服务导出成CSV等其他Portal支持的文件格式。</p>
+
       
     </div>
     
@@ -396,6 +454,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Portal/" rel="tag"><i class="fa fa-tag"></i> Portal</a>
+          
+            <a href="/tags/Shapefile/" rel="tag"><i class="fa fa-tag"></i> Shapefile</a>
+          
+        </div>
       
 
       
@@ -475,8 +541,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -491,7 +566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -578,6 +653,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Portal中下载要素服务的流程"><span class="nav-number">1.</span> <span class="nav-text">Portal中下载要素服务的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过REST-API实现要素服务的下载"><span class="nav-number">2.</span> <span class="nav-text">通过REST API实现要素服务的下载</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -605,7 +696,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.9k</span>
+    <span title="Site words total count">13.9k</span>
   
 </div>
 
