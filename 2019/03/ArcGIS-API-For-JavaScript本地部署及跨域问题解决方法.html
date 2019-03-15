@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="ArcGIS API For JavaScript,GP服务," />
+  <meta name="keywords" content="ArcGIS API For JavaScript,本地部署,跨域," />
 
 
 
@@ -96,18 +96,20 @@
 
 
 
-<meta name="description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
-<meta name="keywords" content="ArcGIS API For JavaScript,GP服务">
+<meta name="description" content="Esri提供了在线版本的ArcGIS API For JavaScript，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。 本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇博客，也可在百度上搜索相关的教程。 首先呢，需要从官方网站上下载最新的API">
+<meta name="keywords" content="ArcGIS API For JavaScript,本地部署,跨域">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ArcGIS API For JavaScript使用自定义GP服务">
-<meta property="og:url" content="http://yoursite.com/2018/10/ArcGIS API For JavaScript使用自定义GP服务/index.html">
+<meta property="og:title" content="ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法">
+<meta property="og:url" content="https://jiaoxn.com.cn/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
+<meta property="og:description" content="Esri提供了在线版本的ArcGIS API For JavaScript，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。 本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇博客，也可在百度上搜索相关的教程。 首先呢，需要从官方网站上下载最新的API">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T01:36:26.155Z">
+<meta property="og:image" content="https://jiaoxn.com.cn/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/webapp目录结构.png">
+<meta property="og:updated_time" content="2019-03-13T03:33:10.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArcGIS API For JavaScript使用自定义GP服务">
-<meta name="twitter:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
+<meta name="twitter:title" content="ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法">
+<meta name="twitter:description" content="Esri提供了在线版本的ArcGIS API For JavaScript，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。 本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇博客，也可在百度上搜索相关的教程。 首先呢，需要从官方网站上下载最新的API">
+<meta name="twitter:image" content="https://jiaoxn.com.cn/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/webapp目录结构.png">
 
 
 
@@ -137,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/ArcGIS API For JavaScript使用自定义GP服务/"/>
+  <link rel="canonical" href="https://jiaoxn.com.cn/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法.html"/>
 
 
 
 
 
-  <title>ArcGIS API For JavaScript使用自定义GP服务 | 阿焦的博客</title>
+  <title>ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法 | 阿焦的博客</title>
   
 
 
@@ -270,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/ArcGIS API For JavaScript使用自定义GP服务/">
+    <link itemprop="mainEntityOfPage" href="https://jiaoxn.com.cn/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiaoXN">
@@ -287,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ArcGIS API For JavaScript使用自定义GP服务</h1>
+          <h1 class="post-title" itemprop="name headline">ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法</h1>
         
 
         <div class="post-meta">
@@ -299,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-13T00:00:00+08:00">
-                2018-10-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-13T10:04:22+08:00">
+                2019-03-13
               </time>
             
 
@@ -358,7 +360,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  654
                 </span>
               
 
@@ -374,7 +376,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -395,31 +397,15 @@
       
 
       
-        <p><strong>概述：</strong>通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。</p>
-<h2 id="使用ArcMap发布自定义GP服务"><a href="#使用ArcMap发布自定义GP服务" class="headerlink" title="使用ArcMap发布自定义GP服务"></a>使用ArcMap发布自定义GP服务</h2><p>在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗口中，展开刚刚执行的任务可以查看此任务的执行的详细情况，也可以通过这些描述查看任务执行失败的原因。</p>
-<p>在打开的窗口中，右键想要发布的成GP服务的工具或者模型，然后依次选择<strong>Share As</strong>、<strong>Geoprecessing Services</strong>打开服务发布窗口。</p>
-<ul>
-<li><p>如果想发布一个新的GP服务，则选择选择Publish a service；如果想覆盖已存在的GP服务，则选择Overwrite an existing service；如果只想发布一个服务定义文件，则选择第二项。这里我们选择第一项，发布一个新GP服务。点击“下一步”按钮，打开下一步操作。</p>
-</li>
-<li><p>在这一步中，选择一个ArcGIS Server连接，也就GP服务打算在哪个ArcGIS Server上发布，然后自定义服务名称。点击“下一步”按钮，打开下一步操作。</p>
-</li>
-<li><p>在这一步中，需要配置GP服务在ArcGIS Server服务器上的存储位置，可以创建一个新的文件夹，也可以选择已存在的文件夹。如果选择root文件夹，则发布的服务在ArcGIS Server首页中会看到，如果选择其他文件夹，则需要切换。点击“Continue”按钮，打开下一步操作。</p>
-</li>
-<li><p>在Service Editor窗口中，可以配置服务的其他参数。一般的流程是，首先点击右上角的“Analyze”按钮，让软件自动分析当前服务如果要发布会存在哪些问题。通常情况下，如果分析结果中没有Error这一项，就可以点击Publish按钮发布服务了。在分析结果，双击某一项分析结果，当前窗口会自动<br>跳转到这个结果的配置界面。在这一步需要<strong>值得注意</strong>的是，如果需要在JS API中获取GP服务的执行结果，<strong>一定要勾选View results with a map serveice</strong>。顾名思义，勾选这个以后，可以以调用MapService的方式调用GP服务的执行结果。</p>
-</li>
-</ul>
-<h2 id="ArcGIS-API-For-JavaScript-使用发布的自定义GP服务"><a href="#ArcGIS-API-For-JavaScript-使用发布的自定义GP服务" class="headerlink" title="ArcGIS API For JavaScript 使用发布的自定义GP服务"></a>ArcGIS API For JavaScript 使用发布的自定义GP服务</h2><p>在JavaScript API中调用自定义GP服务与调用ArcGIS Server自带的GP服务方式是一样的，首先呢，需要在ArcGIS Server中获得GP服务的调用地址。</p>
-<ul>
-<li><p>在ArcGIS Server页面找到我们想调用的GP服务，然后点击服务名称，打开该服务的详细信息界面。</p>
-</li>
-<li><p>点击左侧的Capibilities选项卡，然后点击右侧的Rest URL地址，打开一个新的标签页。</p>
-</li>
-<li><p>在新的标签页中，点击Tasks下面的工具/模型名称，然后复制浏览器中URL，这就是我们要使用的GP服务的调用地址。在这个页面中，也可以查看这个GP服务的参数信息。</p>
-</li>
-</ul>
-<p>接下来要做的就是在JS代码中调用这个GP服务。这个调用方式也比较简单，首先需要做的就是在dojo中引入”esri/tasks/Geoprocessor”,然后使用GP服务地址初始化Geoprocessor、配置GP服务参数、调用submitJob函数执行GP服务，最后在异步函数中获得GP服务的返回结果。</p>
-<p>示例代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">"esri/tasks/Geoprocessor"</span>],</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">Geoprocessor</span>) </span>&#123;</span><br><span class="line">		returen declare(<span class="literal">null</span>, &#123;</span><br><span class="line">			gp_example: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">				<span class="keyword">var</span> gp_service_url = <span class="string">"https://localhost:6443/arcgis/rest/services/IDW/Model2222/GPServer/IDW_24"</span>;  <span class="comment">// GP服务地址</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 配置GP服务参数</span></span><br><span class="line">				<span class="keyword">var</span> gp_parameters = &#123;</span><br><span class="line">                    ZValue: <span class="string">"rain"</span>,</span><br><span class="line">                    OutputCellSize: <span class="number">0.005</span></span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">                <span class="keyword">var</span> idw_gp = Geoprocessor(gp_service_url);</span><br><span class="line">                idw_gp.submitJob(gp_parameters, gp_job_complete, gp_job_status, gp_job_failed);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// GP服务执行完成后异步调用</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_complete</span>(<span class="params">job_info</span>) </span>&#123;</span><br><span class="line">                    idw_gp.getResultImageLayer(job_info.jobId, <span class="literal">null</span>, <span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params">layer</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> gp_result_lyrs_url = layer.url;  <span class="comment">// 获取GP服务执行结果的访问地址，如果想访问某个结果，可在后面添加"/" + 结果的索引号（从0开始）访问</span></span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 访问GP服务的执行状态</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_status</span>(<span class="params">job_info</span>) </span>&#123;</span><br><span class="line">					<span class="keyword">var</span> job_status = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">switch</span> (job_info.jobStatus) &#123;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobSubmitted"</span>:</span><br><span class="line">                            job_status = <span class="string">"提交插值任务..."</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobExecuting"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值处理..."</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobFailed"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值失败"</span>;</span><br><span class="line">                            alert(<span class="string">"抱歉，执行插值操作失败，请重新点击！"</span>);</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobSucceeded"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值成功"</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// GP服务执行失败后异步调用</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_failed</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"抱歉，执行插值操作失败，请重新点击！"</span>);</span><br><span class="line">                &#125;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+        <p>Esri提供了在线版本的<a href="https://developers.arcgis.com/javascript/" target="_blank" rel="noopener">ArcGIS API For JavaScript</a>，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。</p>
+<p>本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇<a href="https://jiaoxn.com.cn/2019/01/Centos%E5%8D%95%E6%9C%BA%E5%AE%89%E8%A3%85PortalForArcGIS/#more" target="_blank" rel="noopener">博客</a>，也可在百度上搜索相关的教程。</p>
+<p>首先呢，需要从<a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=javascript" target="_blank" rel="noopener">官方网站</a>上下载最新的API（此处以4.10版本为例），然后将其解压，拷贝到tomcat安装目录下的webapp文件夹中，目录结果如下图所示。</p>
+<p><img src="/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/webapp目录结构.png" alt="Tomcat的webapp目录结构"></p>
+<p>在<strong>arcgis_js_api\library\4.10</strong>文件夹中，分别编辑<strong>init.js</strong>和<strong>dojo\dojo.js</strong>文件，将这里两个文件中的[HOSTNAME_AND_PATH_TO_JSAPI]替换为<strong>10.10.10.10/arcgis_js_v410_api/arcgis_js_api/library/4.10/</strong>，其中10.10.10.10是机器的IP地址，arcgis_js_v410_api/arcgis_js_api/library/4.10/为基于webapp文件夹访问init.js的路径。<br>在浏览器中输入<a href="https://10.10.10.10/arcgis_js_v410_api/arcgis_js_api/library/4.10/dojo/dojo.js" target="_blank" rel="noopener">https://10.10.10.10/arcgis_js_v410_api/arcgis_js_api/library/4.10/dojo/dojo.js</a> ，如果可以访问表示，JS API配置成功。</p>
+<p>到了这一步JS API已经在Tomcat中部署好了，如果此时在前端调用，会发现地图的放大或缩小等其他按钮图标不能正常显示，此时我们需要对Tomcat做进一步的跨域处理。</p>
+<p>下载Tomcat配置跨域所需的文件（链接：<a href="https://pan.baidu.com/s/1uV6MsQH6SUaA8RTC2qOQdQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1uV6MsQH6SUaA8RTC2qOQdQ</a> ，提取码：dedj），然后将加压后的文件夹中的cors-filter-2.5.jar和java-property-utils-1.9.1拷贝到tomcat的lib文件夹内，然后编辑conf文件夹中的web.xml，在250行左右添加如下内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;    </span><br><span class="line">    &lt;filter-name&gt;CORS&lt;/filter-name&gt;    </span><br><span class="line">    &lt;filter-class&gt;com.thetransactioncompany.cors.CORSFilter&lt;/filter-class&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.allowOrigin&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;*&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.supportedMethods&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;GET, POST, HEAD, PUT, DELETE&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.supportedHeaders&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;Accept, Origin, X-Requested-With, Content-Type, Last-Modified&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.exposedHeaders&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;Set-Cookie&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.supportsCredentials&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;true&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">&lt;/filter&gt;    </span><br><span class="line">&lt;filter-mapping&gt;    </span><br><span class="line">    &lt;filter-name&gt;CORS&lt;/filter-name&gt;    </span><br><span class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;    </span><br><span class="line">&lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>配置web.xml文件后，重启tomcat服务。然后刷新前端页面，如果能够访问到正常的图标文件，表示ArcGIS API For JavaScript可以正常使用了。</p>
 
       
     </div>
@@ -449,7 +435,9 @@
           
             <a href="/tags/ArcGIS-API-For-JavaScript/" rel="tag"><i class="fa fa-tag"></i> ArcGIS API For JavaScript</a>
           
-            <a href="/tags/GP服务/" rel="tag"><i class="fa fa-tag"></i> GP服务</a>
+            <a href="/tags/本地部署/" rel="tag"><i class="fa fa-tag"></i> 本地部署</a>
+          
+            <a href="/tags/跨域/" rel="tag"><i class="fa fa-tag"></i> 跨域</a>
           
         </div>
       
@@ -462,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/WindowsServer2008R2安装PostgreSQL数据库可能出现的问题及解决方法/" rel="next" title="Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法">
-                <i class="fa fa-chevron-left"></i> Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法
+              <a href="/2019/01/Centos单机安装PortalForArcGIS.html" rel="next" title="Centos单机安装Portal">
+                <i class="fa fa-chevron-left"></i> Centos单机安装Portal
               </a>
             
           </div>
@@ -472,8 +460,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/vue-cli 3 使用vue-bootstrap-datetimepicker加载日期插件/" rel="prev" title="vue-cli 3使用vue-bootstrap-datetimepicker日期插件">
-                vue-cli 3使用vue-bootstrap-datetimepicker日期插件 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/基于REST的方式访问Portal的GA工具.html" rel="prev" title="基于REST的方式访问Portal的GA工具">
+                基于REST的方式访问Portal的GA工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -531,17 +519,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -642,22 +621,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用ArcMap发布自定义GP服务"><span class="nav-number">1.</span> <span class="nav-text">使用ArcMap发布自定义GP服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArcGIS-API-For-JavaScript-使用发布的自定义GP服务"><span class="nav-number">2.</span> <span class="nav-text">ArcGIS API For JavaScript 使用发布的自定义GP服务</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

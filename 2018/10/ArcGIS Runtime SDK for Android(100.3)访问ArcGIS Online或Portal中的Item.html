@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="ArcGIS API For JavaScript,本地部署,跨域," />
+  <meta name="keywords" content="ArcGIS Runtime SDK for Android,Portal," />
 
 
 
@@ -96,20 +96,18 @@
 
 
 
-<meta name="description" content="Esri提供了在线版本的ArcGIS API For JavaScript，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。 本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇博客，也可在百度上搜索相关的教程。 首先呢，需要从官方网站上下载最新的API">
-<meta name="keywords" content="ArcGIS API For JavaScript,本地部署,跨域">
+<meta name="description" content="概述：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。 ArcGIS Runtime 提供了两种认">
+<meta name="keywords" content="ArcGIS Runtime SDK for Android,Portal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法">
-<meta property="og:url" content="http://yoursite.com/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/index.html">
+<meta property="og:title" content="ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item">
+<meta property="og:url" content="https://jiaoxn.com.cn/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="Esri提供了在线版本的ArcGIS API For JavaScript，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。 本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇博客，也可在百度上搜索相关的教程。 首先呢，需要从官方网站上下载最新的API">
+<meta property="og:description" content="概述：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。 ArcGIS Runtime 提供了两种认">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/webapp目录结构.png">
-<meta property="og:updated_time" content="2019-03-13T03:33:10.231Z">
+<meta property="og:updated_time" content="2019-03-13T02:31:32.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法">
-<meta name="twitter:description" content="Esri提供了在线版本的ArcGIS API For JavaScript，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。 本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇博客，也可在百度上搜索相关的教程。 首先呢，需要从官方网站上下载最新的API">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/webapp目录结构.png">
+<meta name="twitter:title" content="ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item">
+<meta name="twitter:description" content="概述：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。 ArcGIS Runtime 提供了两种认">
 
 
 
@@ -139,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/"/>
+  <link rel="canonical" href="https://jiaoxn.com.cn/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item.html"/>
 
 
 
 
 
-  <title>ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法 | 阿焦的博客</title>
+  <title>ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item | 阿焦的博客</title>
   
 
 
@@ -272,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/">
+    <link itemprop="mainEntityOfPage" href="https://jiaoxn.com.cn/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiaoXN">
@@ -289,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ArcGIS_API_For_JavaScript本地部署及跨域问题解决方法</h1>
+          <h1 class="post-title" itemprop="name headline">ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item</h1>
         
 
         <div class="post-meta">
@@ -301,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-13T10:04:22+08:00">
-                2019-03-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T00:00:00+08:00">
+                2018-10-05
               </time>
             
 
@@ -360,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  654
+                  420
                 </span>
               
 
@@ -376,7 +374,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -397,15 +395,17 @@
       
 
       
-        <p>Esri提供了在线版本的<a href="https://developers.arcgis.com/javascript/" target="_blank" rel="noopener">ArcGIS API For JavaScript</a>，方便开发者调用。但在有些项目中，由于某些原因不能访问外网，因此有必要在局域网中部署一条ArcGIS API For JavaScript。</p>
-<p>本篇博客中使用Tomcat来作为Web应用服务器。Java JDK和Tomcat的安装配置可参考我的另外一篇<a href="https://jiaoxn.com.cn/2019/01/Centos%E5%8D%95%E6%9C%BA%E5%AE%89%E8%A3%85PortalForArcGIS/#more" target="_blank" rel="noopener">博客</a>，也可在百度上搜索相关的教程。</p>
-<p>首先呢，需要从<a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=javascript" target="_blank" rel="noopener">官方网站</a>上下载最新的API（此处以4.10版本为例），然后将其解压，拷贝到tomcat安装目录下的webapp文件夹中，目录结果如下图所示。</p>
-<p><img src="/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法/webapp目录结构.png" alt="Tomcat的webapp目录结构"></p>
-<p>在<strong>arcgis_js_api\library\4.10</strong>文件夹中，分别编辑<strong>init.js</strong>和<strong>dojo\dojo.js</strong>文件，将这里两个文件中的[HOSTNAME_AND_PATH_TO_JSAPI]替换为<strong>10.10.10.10/arcgis_js_v410_api/arcgis_js_api/library/4.10/</strong>，其中10.10.10.10是机器的IP地址，arcgis_js_v410_api/arcgis_js_api/library/4.10/为基于webapp文件夹访问init.js的路径。<br>在浏览器中输入<a href="https://10.10.10.10/arcgis_js_v410_api/arcgis_js_api/library/4.10/dojo/dojo.js" target="_blank" rel="noopener">https://10.10.10.10/arcgis_js_v410_api/arcgis_js_api/library/4.10/dojo/dojo.js</a> ，如果可以访问表示，JS API配置成功。</p>
-<p>到了这一步JS API已经在Tomcat中部署好了，如果此时在前端调用，会发现地图的放大或缩小等其他按钮图标不能正常显示，此时我们需要对Tomcat做进一步的跨域处理。</p>
-<p>下载Tomcat配置跨域所需的文件（链接：<a href="https://pan.baidu.com/s/1uV6MsQH6SUaA8RTC2qOQdQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1uV6MsQH6SUaA8RTC2qOQdQ</a> ，提取码：dedj），然后将加压后的文件夹中的cors-filter-2.5.jar和java-property-utils-1.9.1拷贝到tomcat的lib文件夹内，然后编辑conf文件夹中的web.xml，在250行左右添加如下内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;    </span><br><span class="line">    &lt;filter-name&gt;CORS&lt;/filter-name&gt;    </span><br><span class="line">    &lt;filter-class&gt;com.thetransactioncompany.cors.CORSFilter&lt;/filter-class&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.allowOrigin&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;*&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.supportedMethods&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;GET, POST, HEAD, PUT, DELETE&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.supportedHeaders&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;Accept, Origin, X-Requested-With, Content-Type, Last-Modified&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.exposedHeaders&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;Set-Cookie&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">    &lt;init-param&gt;    </span><br><span class="line">        &lt;param-name&gt;cors.supportsCredentials&lt;/param-name&gt;   </span><br><span class="line">        &lt;param-value&gt;true&lt;/param-value&gt;   </span><br><span class="line">    &lt;/init-param&gt;    </span><br><span class="line">&lt;/filter&gt;    </span><br><span class="line">&lt;filter-mapping&gt;    </span><br><span class="line">    &lt;filter-name&gt;CORS&lt;/filter-name&gt;    </span><br><span class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;    </span><br><span class="line">&lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-<p>配置web.xml文件后，重启tomcat服务。然后刷新前端页面，如果能够访问到正常的图标文件，表示ArcGIS API For JavaScript可以正常使用了。</p>
+        <p><strong>概述</strong>：ArcGIS Rumtime SDK for Android可以加载离线的slpk作为Scence中的Layer，也可以加载Portal（包括ArcGIS Online）中发布的Scene和SceneLayer。本篇博客简要介绍了Android SDK访问Portal或ArcGIS Online中的Item作为ScenceLayer或者Scene。</p>
+<p>ArcGIS Runtime 提供了两种认证模式：App login 和 Named user login。本篇博客使用Named user login 认证模式。</p>
+<p> 使用Named user login认证模式需要使用可登陆Portal（或者ArcGIS Online）的用户名和与其对应的密码。登陆后，操作者<strong>可访问该用户的私有内容或者该用户所在组织的分享给该用户的内容，可创建、更新和删除用户内容，可访问高级内容（如：geocoding、routing），可分享内容给所在组织的其他用户</strong>。因此，使用这种认证模式需要考虑相应的风险。好了，废物不多说，下面直接上干货。</p>
+<p>首先呢，需要先配置AuthenticationManager，主要是为了显示在App中显示出登录界面，这个界面不需要咱们自己写，配置好后，会自动弹出。代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AuthenticationChallengeHandler authenticationChallengeHandler =</span><br><span class="line">                <span class="keyword">new</span> DefaultAuthenticationChallengeHandler(<span class="keyword">this</span>);</span><br><span class="line">AuthenticationManager.setAuthenticationChallengeHandler(authenticationChallengeHandler);</span><br></pre></td></tr></table></figure>
+<p>其次，需要设置Portal，并设置监听函数。代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Portal portal = <span class="keyword">new</span> Portal(<span class="string">"https://www.arcgis.com"</span>, <span class="keyword">true</span>);</span><br><span class="line">portal.addDoneLoadingListener(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (portal.getLoadStatus() == LoadStatus.LOADED) &#123;</span><br><span class="line">        <span class="comment">// do something when you login successfully</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (portal.getLoadStatus() == LoadStatus.FAILED_TO_LOAD) &#123;</span><br><span class="line">        <span class="comment">// // do something when you login failed</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">portal.loadAsync();</span><br></pre></td></tr></table></figure>
+<p>最后，使用Portal中的Item对应的Id创建ScencLayer或者Scene。相应代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PortalItem portalItem = <span class="keyword">new</span> PortalItem(portal, <span class="string">"465077bf1afa4d048f2875eba679c4e6"</span>);</span><br><span class="line">ArcGISSceneLayer arcGISSceneLayer = <span class="keyword">new</span> ArcGISSceneLayer(portalItem);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PortalItem portalItem = <span class="keyword">new</span> PortalItem(portal, <span class="string">"465077bf1afa4d048f2875eba679c4e6"</span>);</span><br><span class="line">ArcGISScene arcGISScene = <span class="keyword">new</span> ArcGISScene(portalItem);</span><br></pre></td></tr></table></figure>
+<p>其中，”465077bf1afa4d048f2875eba679c4e6”为Item的Id。在Portal（或者ArcGIS Online）中访问Item时，其对应的URL最后（如：**id=04ca8335c37a4ced90cd829c49b0a900）有该内容对应的ID。</p>
 
       
     </div>
@@ -433,11 +433,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ArcGIS-API-For-JavaScript/" rel="tag"><i class="fa fa-tag"></i> ArcGIS API For JavaScript</a>
+            <a href="/tags/ArcGIS-Runtime-SDK-for-Android/" rel="tag"><i class="fa fa-tag"></i> ArcGIS Runtime SDK for Android</a>
           
-            <a href="/tags/本地部署/" rel="tag"><i class="fa fa-tag"></i> 本地部署</a>
-          
-            <a href="/tags/跨域/" rel="tag"><i class="fa fa-tag"></i> 跨域</a>
+            <a href="/tags/Portal/" rel="tag"><i class="fa fa-tag"></i> Portal</a>
           
         </div>
       
@@ -450,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/Centos单机安装PortalForArcGIS/" rel="next" title="Centos单机安装Portal">
-                <i class="fa fa-chevron-left"></i> Centos单机安装Portal
+              <a href="/2018/5/Portal迁移.html" rel="next" title="Portal迁移（以部署UrbanIOC为例）">
+                <i class="fa fa-chevron-left"></i> Portal迁移（以部署UrbanIOC为例）
               </a>
             
           </div>
@@ -460,8 +458,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/基于REST的方式访问Portal的GA工具/" rel="prev" title="基于REST的方式访问Portal的GA工具">
-                基于REST的方式访问Portal的GA工具 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/WindowsServer2008R2安装PostgreSQL数据库可能出现的问题及解决方法.html" rel="prev" title="Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法">
+                Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

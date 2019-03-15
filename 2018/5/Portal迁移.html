@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="Python,Windows,定时," />
+  <meta name="keywords" content="Portal," />
 
 
 
@@ -96,24 +96,25 @@
 
 
 
-<meta name="description" content="在Windows服务器上部署Python脚本时，有时希望每隔一段时间运行一次脚本（如爬虫类程序），有时希望脚本一致运行（如Flask类的应用），对于这类的问题，可通过设置任务计划程序来实现。 以Windows Server 2016操作系统为例，介绍如何配置任务计划程序每隔1小时运行一次Python脚本： 打开任务计划窗口在搜索Windows窗口中，搜索任务计划程序，打开该窗口  创建并配置任务创">
-<meta name="keywords" content="Python,Windows,定时">
+<meta name="description" content="背景环境如下： 1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上； 2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）； 3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Porta">
+<meta name="keywords" content="Portal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows系统下定时执行Python程序">
-<meta property="og:url" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/index.html">
+<meta property="og:title" content="Portal迁移（以部署UrbanIOC为例）">
+<meta property="og:url" content="https://jiaoxn.com.cn/2018/5/Portal迁移.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="在Windows服务器上部署Python脚本时，有时希望每隔一段时间运行一次脚本（如爬虫类程序），有时希望脚本一致运行（如Flask类的应用），对于这类的问题，可通过设置任务计划程序来实现。 以Windows Server 2016操作系统为例，介绍如何配置任务计划程序每隔1小时运行一次Python脚本： 打开任务计划窗口在搜索Windows窗口中，搜索任务计划程序，打开该窗口  创建并配置任务创">
+<meta property="og:description" content="背景环境如下： 1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上； 2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）； 3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Porta">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/任务计划程序主窗口.png">
-<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/创建基本任务.png">
-<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/配置任务触发器.png">
-<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/配置任务操作.png">
-<meta property="og:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/手动启动任务.png">
-<meta property="og:updated_time" content="2019-03-13T02:33:19.134Z">
+<meta property="og:image" content="https://jiaoxn.com.cn/2018/5/Portal迁移/查看计算机全名.png">
+<meta property="og:image" content="https://jiaoxn.com.cn/2018/5/Portal迁移/Portal管理员登录界面.png">
+<meta property="og:image" content="https://jiaoxn.com.cn/2018/5/Portal迁移/Portal管理员登录界面-System.png">
+<meta property="og:image" content="https://jiaoxn.com.cn/2018/5/Portal迁移/Portal管理员登录界面-WebAdaptor.png">
+<meta property="og:image" content="https://jiaoxn.com.cn/2018/5/Portal迁移/Portal管理员登录界面-反注册WebAdaptor.png">
+<meta property="og:image" content="https://jiaoxn.com.cn/2018/5/Portal迁移/配置Portal和Server的托管.png">
+<meta property="og:updated_time" content="2019-03-13T02:30:35.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows系统下定时执行Python程序">
-<meta name="twitter:description" content="在Windows服务器上部署Python脚本时，有时希望每隔一段时间运行一次脚本（如爬虫类程序），有时希望脚本一致运行（如Flask类的应用），对于这类的问题，可通过设置任务计划程序来实现。 以Windows Server 2016操作系统为例，介绍如何配置任务计划程序每隔1小时运行一次Python脚本： 打开任务计划窗口在搜索Windows窗口中，搜索任务计划程序，打开该窗口  创建并配置任务创">
-<meta name="twitter:image" content="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/任务计划程序主窗口.png">
+<meta name="twitter:title" content="Portal迁移（以部署UrbanIOC为例）">
+<meta name="twitter:description" content="背景环境如下： 1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上； 2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）； 3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Porta">
+<meta name="twitter:image" content="https://jiaoxn.com.cn/2018/5/Portal迁移/查看计算机全名.png">
 
 
 
@@ -143,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/"/>
+  <link rel="canonical" href="https://jiaoxn.com.cn/2018/5/Portal迁移.html"/>
 
 
 
 
 
-  <title>Windows系统下定时执行Python程序 | 阿焦的博客</title>
+  <title>Portal迁移（以部署UrbanIOC为例） | 阿焦的博客</title>
   
 
 
@@ -276,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/Windows系统下定时执行Python程序/">
+    <link itemprop="mainEntityOfPage" href="https://jiaoxn.com.cn/2018/5/Portal迁移.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiaoXN">
@@ -293,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows系统下定时执行Python程序</h1>
+          <h1 class="post-title" itemprop="name headline">Portal迁移（以部署UrbanIOC为例）</h1>
         
 
         <div class="post-meta">
@@ -305,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-27T00:00:00+08:00">
-                2018-12-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T00:00:00+08:00">
+                2018-05-23
               </time>
             
 
@@ -328,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软件操作/" itemprop="url" rel="index">
-                    <span itemprop="name">软件操作</span>
+                  <a href="/categories/Portal操作/" itemprop="url" rel="index">
+                    <span itemprop="name">Portal操作</span>
                   </a>
                 </span>
 
@@ -364,7 +365,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  606
+                  735
                 </span>
               
 
@@ -401,20 +402,39 @@
       
 
       
-        <p>在Windows服务器上部署Python脚本时，有时希望每隔一段时间运行一次脚本（如爬虫类程序），有时希望脚本一致运行（如Flask类的应用），对于这类的问题，可通过设置任务计划程序来实现。</p>
-<p>以Windows Server 2016操作系统为例，介绍如何配置任务计划程序每隔1小时运行一次Python脚本：</p>
-<h2 id="打开任务计划窗口"><a href="#打开任务计划窗口" class="headerlink" title="打开任务计划窗口"></a>打开任务计划窗口</h2><p>在搜索Windows窗口中，搜索任务计划程序，打开该窗口</p>
-<p><img src="/2018/12/Windows系统下定时执行Python程序/任务计划程序主窗口.png" alt="任务计划程序主窗口"></p>
-<h2 id="创建并配置任务"><a href="#创建并配置任务" class="headerlink" title="创建并配置任务"></a>创建并配置任务</h2><h3 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h3><p>点击窗口右上角的创建任务按钮，打开任务向导窗口，然后在该窗口的常规选项卡中设置任务名称和任务描述，其余配置可以默认</p>
-<p><img src="/2018/12/Windows系统下定时执行Python程序/创建基本任务.png" alt="任务计划程序主窗口"></p>
-<h3 id="配置任务触发器"><a href="#配置任务触发器" class="headerlink" title="配置任务触发器"></a>配置任务触发器</h3><p>点击触发器选项卡，然后点击新建按钮，设置触发任务执行的时间。这里选择“一次”并配置任务执行的时间。如果设置的时间为2018/12/28 10:05:00，则程序只会在2018/12/28 10:05:00启动一次，当然也可以手动启动此程序。然后，勾选重复任务间隔，设置时间为1小时，持续时间为无限期。其余配置保持默认即可。这样配置后，此程序会在每个小时的5分启动，任务执行完成后，程序自动结束。点击确定返回任务配置界面。</p>
-<p><img src="/2018/12/Windows系统下定时执行Python程序/配置任务触发器.png" alt="任务计划程序主窗口"></p>
-<h3 id="配置任务操作"><a href="#配置任务操作" class="headerlink" title="配置任务操作"></a>配置任务操作</h3><p>点击操作选项卡，然后点击新建按钮，设置任务执行的操作。这里选择“启动程序”，因为要执行Python脚本并且Python脚本执行时不打算显示命令行窗口，选择程序为pythow.exe，可通过点击浏览定位到此文件，例如：C:\Users\Administrator\AppData\Local\Programs\Python\Python36\pythonw.exe；参数为要执行的.py文件名称，例如：main.py；起始于选择.py文件所在的文件夹路径，如：C:\Users\Administrator\Desktop。</p>
-<p><img src="/2018/12/Windows系统下定时执行Python程序/配置任务操作.png" alt="任务计划程序主窗口"></p>
-<h3 id="配置任务条件"><a href="#配置任务条件" class="headerlink" title="配置任务条件"></a>配置任务条件</h3><p>可根据自己的应用情况配置，基本上保持默认配置即可。</p>
-<h3 id="配置任务设置"><a href="#配置任务设置" class="headerlink" title="配置任务设置"></a>配置任务设置</h3><p>可根据自己的应用情况配置，基本上保持默认配置即可。</p>
-<h2 id="启动任务"><a href="#启动任务" class="headerlink" title="启动任务"></a>启动任务</h2><p>配置任务后，可手动启动任务。首先，在任务列表中选中任务，然后点击窗口右侧的运行按钮即可执行此任务。</p>
-<p><img src="/2018/12/Windows系统下定时执行Python程序/手动启动任务.png" alt="任务计划程序主窗口"></p>
+        <p>背景环境如下：</p>
+<p>1、已在虚拟机A上安装好Portal、Server、WebAdaptor和DataStore并且将UrbanIOC项目部署到该虚拟机上；</p>
+<p>2、虚拟机A1的计算机全名为example1.esri.com，IP地址为192.168.1.1（只是举例，并不是真正的计算机全名和IP地址）；</p>
+<p>3、申请了一个域名（比如escri.tech，此处需要注意的是申请的域名不能有下划线，否则Portal安装不成功），现需要使用此域名访问UrbanIOC。</p>
+<p>为了解决这种问题，可能大家首先想到的是创建一个计算机全名为esri.tech的虚拟机B，然后安装Portal、Server、WebAdaptor和DataSotre，然后重新部署UrbanIOC。这种方法肯定可以解决这中问题，但是非常耗时间，包括重装软件的时间、项目数据发布的时间（该项目需要发布一个较大的三维场景，数据发布时间挺长的）。在这里给介绍一种新的解决方法：<strong>在虚拟机B上只安装WebAdaptor，然后为虚拟机B上的Portal和Server重新配置WebAdaptor的，最后修改Portal和Server的托管关系</strong>。</p>
+<ul>
+<li>1、新建虚拟机B，并修改其计算机名为esri、DNS为tech，修改完成后，通过查看系统属性，可确认计算机全名为esri.tech。</li>
+</ul>
+<p><img src="/2018/5/Portal迁移/查看计算机全名.png" alt="image"></p>
+<ul>
+<li><p>2、配置虚拟机B的hosts文件（C:\Windows\System32\drivers\etc），添加内容“192.168.1.1 example1.esri.com”，192.168.1.1为虚拟机A的IP地址，example1.esri.com为虚拟机A的计算机全名。这样就可以在虚拟机B中使用虚拟机A的域名访问Portal。</p>
+</li>
+<li><p>3、在虚拟机B上安装WebAdaptor。这里使用JAVA版的WebAdaptor，<a href="http://enterprise.arcgis.com/zh-cn/web-adaptor/latest/install/java-windows/welcome-arcgis-web-adaptor-install-guide.htm" target="_blank" rel="noopener">安装教程可参考ESRI官网</a>。</p>
+</li>
+<li><p>4、在虚拟机A中解除Portal的WebApdator配置。通过地址（<a href="https://example1.esri.com/portal）访问Portal的管理员页面，依次点击**System*" target="_blank" rel="noopener">https://example1.esri.com/portal）访问Portal的管理员页面，依次点击**System*</a>* 、<strong>WebAdaptor</strong> ，查看Portal配置的WebAdaptor。然后再依次点击<strong>对应的WebAdaptor名称</strong> (例如：example1.esri.com)、<strong>Unregister Web Adaptor</strong>。</p>
+</li>
+</ul>
+<p><img src="/2018/5/Portal迁移/Portal管理员登录界面.png" alt="Portal管理员登录界面"></p>
+<p><img src="/2018/5/Portal迁移/Portal管理员登录界面-System.png" alt="Portal管理员登录界面-System"></p>
+<p><img src="/2018/5/Portal迁移/Portal管理员登录界面-WebAdaptor.png" alt="Portal管理员登录界面-WebAdaptor"></p>
+<p><img src="/2018/5/Portal迁移/Portal管理员登录界面-反注册WebAdaptor.png" alt="Portal管理员登录界面-反注册WebAdaptor"></p>
+<ul>
+<li><p>5、在虚拟机A中解除Server的WebAdaptor配置。通过地址（<a href="https://exampl1.esri.com:6443/arcgis/manager）访问Server的管理员页面，依次点击**站点*" target="_blank" rel="noopener">https://exampl1.esri.com:6443/arcgis/manager）访问Server的管理员页面，依次点击**站点*</a>* 、<strong>Web Adaptor</strong> ，然后点击取消注册按钮<strong>×</strong> ，在弹出的确定窗口点击<strong>是</strong> , 取消Server的WebAdaptor注册。</p>
+</li>
+<li><p>6、在虚拟机B中按照官网教程在WebAdaotor分别注册Portal和Server。这里需要注意的是，此时的<strong>WebAdator地址是虚拟机B的WebAdator地址</strong>（例如：<a href="https://esri.tech/arcgis/webadaptor），而**Portal和Server地址是虚拟机A中的Portal和Server地址**（例如：Portal的地址为https://exampl1.esri.com:7443，Server的地址为https://example1.esri.com:6443）。" target="_blank" rel="noopener">https://esri.tech/arcgis/webadaptor），而**Portal和Server地址是虚拟机A中的Portal和Server地址**（例如：Portal的地址为https://exampl1.esri.com:7443，Server的地址为https://example1.esri.com:6443）。</a></p>
+</li>
+<li><p>7、修改Portal与Server的托管关系。在虚拟机B中访问页面Portal，依次点击<strong>Orgnaization</strong> 、 <strong>Servers</strong> 、 <strong>ADD SERVER</strong> ，然后在弹出的页面中，Services URL对应值为”<a href="https://esri.tech/arcgis/manager&quot;，Administration" target="_blank" rel="noopener">https://esri.tech/arcgis/manager&quot;，Administration</a> URL对应值为”<a href="https://esri.tech/arcgis/manager&quot;，Username和Password分别为Server的管理员账户和密码。" target="_blank" rel="noopener">https://esri.tech/arcgis/manager&quot;，Username和Password分别为Server的管理员账户和密码。</a></p>
+</li>
+</ul>
+<p><img src="/2018/5/Portal迁移/配置Portal和Server的托管.png" alt="配置Portal和Server的托管"></p>
+<ul>
+<li>8、最后修改UrbaIOC的配置文件，然后将其部署到虚拟机B中tomacat中。</li>
+</ul>
 
       
     </div>
@@ -442,11 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
-            <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
-          
-            <a href="/tags/定时/" rel="tag"><i class="fa fa-tag"></i> 定时</a>
+            <a href="/tags/Portal/" rel="tag"><i class="fa fa-tag"></i> Portal</a>
           
         </div>
       
@@ -459,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/Centos离线安装Python/" rel="next" title="Centos离线安装Python">
-                <i class="fa fa-chevron-left"></i> Centos离线安装Python
+              <a href="/2018/5/Webstorm配置Tomcat.html" rel="next" title="Webstorm配置Tomcat">
+                <i class="fa fa-chevron-left"></i> Webstorm配置Tomcat
               </a>
             
           </div>
@@ -469,8 +485,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/个人工作总结模板/" rel="prev" title="年度个人工作总结模板">
-                年度个人工作总结模板 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item.html" rel="prev" title="ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item">
+                ArcGIS Runtime SDK for Android(100.3)访问ArcGIS Online或Portal中的Item <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -528,17 +544,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -639,22 +646,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#打开任务计划窗口"><span class="nav-number">1.</span> <span class="nav-text">打开任务计划窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建并配置任务"><span class="nav-number">2.</span> <span class="nav-text">创建并配置任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建任务"><span class="nav-number">2.1.</span> <span class="nav-text">创建任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置任务触发器"><span class="nav-number">2.2.</span> <span class="nav-text">配置任务触发器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置任务操作"><span class="nav-number">2.3.</span> <span class="nav-text">配置任务操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置任务条件"><span class="nav-number">2.4.</span> <span class="nav-text">配置任务条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置任务设置"><span class="nav-number">2.5.</span> <span class="nav-text">配置任务设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动任务"><span class="nav-number">3.</span> <span class="nav-text">启动任务</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
