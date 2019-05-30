@@ -1,5 +1,5 @@
+https://jiaoxn.com.cn/2019/05/ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口.html
 https://jiaoxn.com.cn/2019/03/上传并在地图中显示Shp文件.html
 https://jiaoxn.com.cn/2019/03/基于REST的方式下载Portal中的要素服务.html
 https://jiaoxn.com.cn/2019/03/基于REST的方式访问Portal的GA工具.html
 https://jiaoxn.com.cn/2019/03/ArcGIS-API-For-JavaScript本地部署及跨域问题解决方法.html
-https://jiaoxn.com.cn/2019/01/Centos单机安装PortalForArcGIS.html

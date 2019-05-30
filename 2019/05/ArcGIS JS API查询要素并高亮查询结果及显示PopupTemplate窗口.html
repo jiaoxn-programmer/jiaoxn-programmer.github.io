@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="ArcGIS API For JavaScript,GP服务," />
+  <meta name="keywords" content="ArcGIS API For JavaScript,要素查询," />
 
 
 
@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
-<meta name="keywords" content="ArcGIS API For JavaScript,GP服务">
+<meta name="description" content="问题描述及解决方法在开发WebGIS系统中，有时会遇到这样的需求：  基于查询条件查询要素图层，并将查询结果高亮 将查询结果缩放至当前窗口 自动弹出PopupTemplate窗口显示要素属性信息  针对这样的需求，可以从以下几个方面考虑实现：  对于第一个问题，首先，通过要素图层的createQuery方法构造查询语句，然后，使用要素图层的queryFeatures方法，查询满足条件的要素 对于第">
+<meta name="keywords" content="ArcGIS API For JavaScript,要素查询">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ArcGIS API For JavaScript使用自定义GP服务">
-<meta property="og:url" content="https://jiaoxn.com.cn/2018/10/ArcGIS API For JavaScript使用自定义GP服务.html">
+<meta property="og:title" content="ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口">
+<meta property="og:url" content="https://jiaoxn.com.cn/2019/05/ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口.html">
 <meta property="og:site_name" content="阿焦的博客">
-<meta property="og:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
+<meta property="og:description" content="问题描述及解决方法在开发WebGIS系统中，有时会遇到这样的需求：  基于查询条件查询要素图层，并将查询结果高亮 将查询结果缩放至当前窗口 自动弹出PopupTemplate窗口显示要素属性信息  针对这样的需求，可以从以下几个方面考虑实现：  对于第一个问题，首先，通过要素图层的createQuery方法构造查询语句，然后，使用要素图层的queryFeatures方法，查询满足条件的要素 对于第">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T01:36:26.155Z">
+<meta property="og:updated_time" content="2019-05-30T02:37:42.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArcGIS API For JavaScript使用自定义GP服务">
-<meta name="twitter:description" content="概述：通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。 使用ArcMap发布自定义GP服务在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗">
+<meta name="twitter:title" content="ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口">
+<meta name="twitter:description" content="问题描述及解决方法在开发WebGIS系统中，有时会遇到这样的需求：  基于查询条件查询要素图层，并将查询结果高亮 将查询结果缩放至当前窗口 自动弹出PopupTemplate窗口显示要素属性信息  针对这样的需求，可以从以下几个方面考虑实现：  对于第一个问题，首先，通过要素图层的createQuery方法构造查询语句，然后，使用要素图层的queryFeatures方法，查询满足条件的要素 对于第">
 
 
 
@@ -137,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="https://jiaoxn.com.cn/2018/10/ArcGIS API For JavaScript使用自定义GP服务.html"/>
+  <link rel="canonical" href="https://jiaoxn.com.cn/2019/05/ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口.html"/>
 
 
 
 
 
-  <title>ArcGIS API For JavaScript使用自定义GP服务 | 阿焦的博客</title>
+  <title>ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口 | 阿焦的博客</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jiaoxn.com.cn/2018/10/ArcGIS API For JavaScript使用自定义GP服务.html">
+    <link itemprop="mainEntityOfPage" href="https://jiaoxn.com.cn/2019/05/ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiaoXN">
@@ -287,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ArcGIS API For JavaScript使用自定义GP服务</h1>
+          <h1 class="post-title" itemprop="name headline">ArcGIS JS API查询要素并高亮查询结果及显示PopupTemplate窗口</h1>
         
 
         <div class="post-meta">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-13T00:00:00+08:00">
-                2018-10-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-30T00:24:22+08:00">
+                2019-05-30
               </time>
             
 
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  680
                 </span>
               
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  2
                 </span>
               
             </div>
@@ -395,31 +395,50 @@
       
 
       
-        <p><strong>概述：</strong>通过本篇博客，你将会学习如何通过ArcMap发布自定义GP服务和如何通过ArcGIS API For JavaScript API调用发布的自定义GP服务。</p>
-<h2 id="使用ArcMap发布自定义GP服务"><a href="#使用ArcMap发布自定义GP服务" class="headerlink" title="使用ArcMap发布自定义GP服务"></a>使用ArcMap发布自定义GP服务</h2><p>在ArcMap中使用执行软件自身提供的工具箱或者执行自己定义的ModelBuilder亦或者执行自己创建的工具，无论执行成功与否，在ArcMap的Results窗口中都会有相应的记录。在Results窗口中，展开刚刚执行的任务可以查看此任务的执行的详细情况，也可以通过这些描述查看任务执行失败的原因。</p>
-<p>在打开的窗口中，右键想要发布的成GP服务的工具或者模型，然后依次选择<strong>Share As</strong>、<strong>Geoprecessing Services</strong>打开服务发布窗口。</p>
+        <h2 id="问题描述及解决方法"><a href="#问题描述及解决方法" class="headerlink" title="问题描述及解决方法"></a>问题描述及解决方法</h2><p>在开发WebGIS系统中，有时会遇到这样的需求：</p>
 <ul>
-<li><p>如果想发布一个新的GP服务，则选择选择Publish a service；如果想覆盖已存在的GP服务，则选择Overwrite an existing service；如果只想发布一个服务定义文件，则选择第二项。这里我们选择第一项，发布一个新GP服务。点击“下一步”按钮，打开下一步操作。</p>
-</li>
-<li><p>在这一步中，选择一个ArcGIS Server连接，也就GP服务打算在哪个ArcGIS Server上发布，然后自定义服务名称。点击“下一步”按钮，打开下一步操作。</p>
-</li>
-<li><p>在这一步中，需要配置GP服务在ArcGIS Server服务器上的存储位置，可以创建一个新的文件夹，也可以选择已存在的文件夹。如果选择root文件夹，则发布的服务在ArcGIS Server首页中会看到，如果选择其他文件夹，则需要切换。点击“Continue”按钮，打开下一步操作。</p>
-</li>
-<li><p>在Service Editor窗口中，可以配置服务的其他参数。一般的流程是，首先点击右上角的“Analyze”按钮，让软件自动分析当前服务如果要发布会存在哪些问题。通常情况下，如果分析结果中没有Error这一项，就可以点击Publish按钮发布服务了。在分析结果，双击某一项分析结果，当前窗口会自动<br>跳转到这个结果的配置界面。在这一步需要<strong>值得注意</strong>的是，如果需要在JS API中获取GP服务的执行结果，<strong>一定要勾选View results with a map serveice</strong>。顾名思义，勾选这个以后，可以以调用MapService的方式调用GP服务的执行结果。</p>
-</li>
+<li>基于查询条件查询要素图层，并将查询结果高亮</li>
+<li>将查询结果缩放至当前窗口</li>
+<li>自动弹出PopupTemplate窗口显示要素属性信息</li>
 </ul>
-<h2 id="ArcGIS-API-For-JavaScript-使用发布的自定义GP服务"><a href="#ArcGIS-API-For-JavaScript-使用发布的自定义GP服务" class="headerlink" title="ArcGIS API For JavaScript 使用发布的自定义GP服务"></a>ArcGIS API For JavaScript 使用发布的自定义GP服务</h2><p>在JavaScript API中调用自定义GP服务与调用ArcGIS Server自带的GP服务方式是一样的，首先呢，需要在ArcGIS Server中获得GP服务的调用地址。</p>
+<p>针对这样的需求，可以从以下几个方面考虑实现：</p>
 <ul>
-<li><p>在ArcGIS Server页面找到我们想调用的GP服务，然后点击服务名称，打开该服务的详细信息界面。</p>
-</li>
-<li><p>点击左侧的Capibilities选项卡，然后点击右侧的Rest URL地址，打开一个新的标签页。</p>
-</li>
-<li><p>在新的标签页中，点击Tasks下面的工具/模型名称，然后复制浏览器中URL，这就是我们要使用的GP服务的调用地址。在这个页面中，也可以查看这个GP服务的参数信息。</p>
-</li>
+<li>对于第一个问题，首先，通过要素图层的createQuery方法构造查询语句，然后，使用要素图层的queryFeatures方法，查询满足条件的要素</li>
+<li>对于第二个问题，可以通过调用View（MapView/SceneView）的goTo方法，缩放至查询结果</li>
+<li>对于第三个问题，可以通过调用View的popup实例的open方法，自动弹出PopupTemplate窗口，显示要素属性信息</li>
 </ul>
-<p>接下来要做的就是在JS代码中调用这个GP服务。这个调用方式也比较简单，首先需要做的就是在dojo中引入”esri/tasks/Geoprocessor”,然后使用GP服务地址初始化Geoprocessor、配置GP服务参数、调用submitJob函数执行GP服务，最后在异步函数中获得GP服务的返回结果。</p>
-<p>示例代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">"esri/tasks/Geoprocessor"</span>],</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">Geoprocessor</span>) </span>&#123;</span><br><span class="line">		returen declare(<span class="literal">null</span>, &#123;</span><br><span class="line">			gp_example: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">				<span class="keyword">var</span> gp_service_url = <span class="string">"https://localhost:6443/arcgis/rest/services/IDW/Model2222/GPServer/IDW_24"</span>;  <span class="comment">// GP服务地址</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 配置GP服务参数</span></span><br><span class="line">				<span class="keyword">var</span> gp_parameters = &#123;</span><br><span class="line">                    ZValue: <span class="string">"rain"</span>,</span><br><span class="line">                    OutputCellSize: <span class="number">0.005</span></span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">                <span class="keyword">var</span> idw_gp = Geoprocessor(gp_service_url);</span><br><span class="line">                idw_gp.submitJob(gp_parameters, gp_job_complete, gp_job_status, gp_job_failed);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// GP服务执行完成后异步调用</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_complete</span>(<span class="params">job_info</span>) </span>&#123;</span><br><span class="line">                    idw_gp.getResultImageLayer(job_info.jobId, <span class="literal">null</span>, <span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params">layer</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> gp_result_lyrs_url = layer.url;  <span class="comment">// 获取GP服务执行结果的访问地址，如果想访问某个结果，可在后面添加"/" + 结果的索引号（从0开始）访问</span></span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 访问GP服务的执行状态</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_status</span>(<span class="params">job_info</span>) </span>&#123;</span><br><span class="line">					<span class="keyword">var</span> job_status = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">switch</span> (job_info.jobStatus) &#123;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobSubmitted"</span>:</span><br><span class="line">                            job_status = <span class="string">"提交插值任务..."</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobExecuting"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值处理..."</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobFailed"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值失败"</span>;</span><br><span class="line">                            alert(<span class="string">"抱歉，执行插值操作失败，请重新点击！"</span>);</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">"esriJobSucceeded"</span>:</span><br><span class="line">                            job_status = <span class="string">"插值成功"</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// GP服务执行失败后异步调用</span></span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">gp_job_failed</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"抱歉，执行插值操作失败，请重新点击！"</span>);</span><br><span class="line">                &#125;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<p>具体提代码实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 获取要素图层</span><br><span class="line">let featureLayer = this.esriSceneView.map.layers.getItemAt(0);</span><br><span class="line"></span><br><span class="line">// 组织要素图层查询语句</span><br><span class="line">let queryFeatures = featureLayer.createQuery();</span><br><span class="line">queryFeatures.where = &apos;NAME=N\&apos;&apos; + featureName + &apos;\&apos;&apos;;</span><br><span class="line"></span><br><span class="line">// 查询特定的要素</span><br><span class="line">featureLayer.queryFeatures(queryFeatures).then(function (result) &#123;</span><br><span class="line">    let queryResultFeature = result.features[0];</span><br><span class="line"></span><br><span class="line">    // 缩放至当前要素</span><br><span class="line">    that.esriSceneView.goTo(queryResultFeature.geometry.extent.expand(2), &#123;</span><br><span class="line">    duration: 2000</span><br><span class="line">    &#125;).then(function () &#123;</span><br><span class="line">    // 高亮选择的要素并自动打开PopupTemple</span><br><span class="line">    that.esriSceneView.popup.open(&#123;</span><br><span class="line">        features: [queryResultFeature],</span><br><span class="line">        location: queryResultFeature.geometry.centroid</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="延伸"><a href="#延伸" class="headerlink" title="延伸"></a>延伸</h2><ol>
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#createQuery" target="_blank" rel="noopener">createQuery</a></li>
+</ol>
+<p>要素服务图层的createQuery方法，可以创建一个查询对象，这个对象可以用来获取满足图层配置的要素。该方法的返回结果是<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-tasks-support-Query.html" target="_blank" rel="noopener">Query</a>类。</p>
+<ol start="2">
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html#goTo" target="_blank" rel="noopener">goTo</a></li>
+</ol>
+<p>该方法可以将View的视角切换到指定对象，这个对象可以是：</p>
+<ul>
+<li>坐标对，类似于[lon, lat]</li>
+<li>Geometry 或者 Geometry[]</li>
+<li>Graphic 或者 Graphic[]</li>
+<li>Viewpoint</li>
+<li>Camera</li>
+<li>具有target、center、scale、position、heading、tilt属性的Object对象</li>
+</ul>
+<p>该方法会返回一个Promise对象，当视图的视角切换到指定对象后会立马解析该Promise对象。</p>
+<p>如果指定的对象和当前camera的位置相距甚远，倾角和航向会被自动的设置为一个中立值（朝北，从上而下），不过可以显示的设置值来避免这种行为。</p>
+<ol start="3">
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Extent.html#expand" target="_blank" rel="noopener">expand</a></li>
+</ol>
+<p>根据指定因子扩展当前extend的范围。</p>
+<ol start="4">
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html#popup" target="_blank" rel="noopener">popup</a></li>
+</ol>
+<p>可以设置或获取当前view中的Popup实例，该实例能够显示图层中的常规内容或属性。可以直接修改该实例的centen或者配置图层的PopupTemplate修改popup中显示的内容。</p>
+<ol start="5">
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#open" target="_blank" rel="noopener">popup.open</a></li>
+</ol>
+<p>在指定位置打开Popup窗口，其内容可以通过content明确的指定，或者通过目标要素的PopupTemplate驱动。该方法会自动将popup实例的visible属性设置为true。仅当当前视图的大小限制符合DockOptions规定或者位置属性设置为Geometry，该popup窗口才会显示。</p>
 
       
     </div>
@@ -449,7 +468,7 @@
           
             <a href="/tags/ArcGIS-API-For-JavaScript/" rel="tag"><i class="fa fa-tag"></i> ArcGIS API For JavaScript</a>
           
-            <a href="/tags/GP服务/" rel="tag"><i class="fa fa-tag"></i> GP服务</a>
+            <a href="/tags/要素查询/" rel="tag"><i class="fa fa-tag"></i> 要素查询</a>
           
         </div>
       
@@ -462,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/WindowsServer2008R2安装PostgreSQL数据库可能出现的问题及解决方法.html" rel="next" title="Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法">
-                <i class="fa fa-chevron-left"></i> Windows Server 2008 R2安装PostgreSQL数据库时出现的问题及解决方法
+              <a href="/2019/03/上传并在地图中显示Shp文件.html" rel="next" title="上传并在地图中显示Shp文件">
+                <i class="fa fa-chevron-left"></i> 上传并在地图中显示Shp文件
               </a>
             
           </div>
@@ -471,10 +490,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/vue-cli 3 使用vue-bootstrap-datetimepicker加载日期插件.html" rel="prev" title="vue-cli 3使用vue-bootstrap-datetimepicker日期插件">
-                vue-cli 3使用vue-bootstrap-datetimepicker日期插件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -652,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用ArcMap发布自定义GP服务"><span class="nav-number">1.</span> <span class="nav-text">使用ArcMap发布自定义GP服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArcGIS-API-For-JavaScript-使用发布的自定义GP服务"><span class="nav-number">2.</span> <span class="nav-text">ArcGIS API For JavaScript 使用发布的自定义GP服务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述及解决方法"><span class="nav-number">1.</span> <span class="nav-text">问题描述及解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#延伸"><span class="nav-number">2.</span> <span class="nav-text">延伸</span></a></li></ol></div>
             
 
           </div>
